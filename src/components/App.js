@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Button variant="contained"> Testing Material UI </Button>
+        <Button variant="contained" className="bg-indigo-500 font-extrabold"> Testing Material UI </Button>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
