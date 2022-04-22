@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { StyledEngineProvider } from '@mui/material';
 import './index.css';
-import App from './components/App';
 import CssBaseline from '@mui/material/CssBaseline';
+import App from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,5 +12,5 @@ root.render(
       <CssBaseline />
       <App />
     </StyledEngineProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
 );
