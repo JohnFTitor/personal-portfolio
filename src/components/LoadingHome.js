@@ -28,7 +28,7 @@ const LoadingHome = () => {
 
   return (
     <>
-      <img src={animation} alt="Loading Animation" className="container px-10" />
+      <img src={animation} alt="Loading Animation" className="container px-10 animate-slow_fade" />
       <Box className="mt-8 flex justify-center container px-5">
         {circles}
       </Box>
