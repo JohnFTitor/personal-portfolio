@@ -9,6 +9,15 @@ module.exports = {
         display: ['IBM Plex Mono', 'Menlo', 'monospace'],
         body: ['IBM Plex Mono', 'Menlo', 'monospace'],
       },
+      keyframes: {
+        fade: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        fade: 'fade 1s cubic-bezier(0.4, 0.6, 0.8, 1)',
+      },
       colors: {
         primary: {
           50: '#FDFCFF',
