@@ -28,12 +28,12 @@ const Loading = (props) => {
   }, [circles]);
 
   return (
-    <>
+    <Box className="flex flex-col items-center min-h-screen justify-center">
       <img src={animation} alt="Loading Animation" className="container px-10 animate-slow_fade" />
       <Box className="mt-8 flex justify-center container px-5">
         {circles}
       </Box>
-    </>
+    </Box>
   );
 };
 

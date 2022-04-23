@@ -26,6 +26,10 @@ module.exports = {
           '0%': { transform: 'translateY(-100%)' },
           '100%': { transform: 'translateY(0%)' },
         },
+        slide_up_half: {
+          '0%': { transform: 'translateY(50%)' },
+          '100%': { transform: 'translateY(0%)' },
+        },
       },
       animation: {
         fade: 'fade 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
@@ -33,6 +37,7 @@ module.exports = {
         slide_left: 'slide_left 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
         slide_down: 'slide_down 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
         slide_right: 'slide_right 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
+        slide_up_half: 'slide_up_half 1s cubic-bezier(0.2, 0.4, 0.8, 1)',
       },
       colors: {
         primary: {
