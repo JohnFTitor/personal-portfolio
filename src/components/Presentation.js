@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import animation from '../assets/gifs/okabeandkurisu.gif';
 
 const Presentation = () => {
@@ -20,6 +23,17 @@ const Presentation = () => {
           <p className="animate-fade text-center font-['Lato'] font-bold text-tertiary-800 text-2xl m-0">
             Frontend developer with a never ending hunger for learning
           </p>
+          <Box className="container flex justify-evenly mt-5">
+            <IconButton className="bg-tertiary-700 animate-slide_left">
+              <GitHubIcon className="text-4xl text-white" />
+            </IconButton>
+            <IconButton className="bg-primary-700 animate-slide_up">
+              <TwitterIcon className="text-4xl text-white" />
+            </IconButton>
+            <IconButton className="bg-primary-700 animate-slide_right">
+              <LinkedInIcon className="text-4xl text-white" />
+            </IconButton>
+          </Box>
         </>
       ) : null}
     </Box>
