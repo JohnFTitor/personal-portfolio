@@ -10,7 +10,7 @@ const HomePage = () => {
     setTimeout(() => {
       setLoaded(true);
     }, 4000);
-  });
+  }, [loaded]);
 
   return (
     <>
