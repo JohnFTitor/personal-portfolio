@@ -9,6 +9,9 @@ module.exports = {
         display: ['IBM Plex Mono', 'Menlo', 'monospace'],
         body: ['IBM Plex Mono', 'Menlo', 'monospace'],
       },
+      gridTemplateRows: {
+        auto_1fr: 'auto 1fr',
+      },
       keyframes: {
         fade: {
           '0%': { opacity: '0' },
@@ -31,7 +34,7 @@ module.exports = {
           '100%': { transform: 'translateY(0%)' },
         },
         slide_up_half: {
-          '0%': { transform: 'translateY(50%)' },
+          '0%': { transform: 'translateY(150%)' },
           '100%': { transform: 'translateY(0%)' },
         },
       },
@@ -42,7 +45,7 @@ module.exports = {
         slide_up: 'slide_up 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
         slide_down: 'slide_down 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
         slide_right: 'slide_right 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
-        slide_up_half: 'slide_up_half 1s cubic-bezier(0.2, 0.4, 0.8, 1)',
+        slide_up_half: 'slide_up_half 1s cubic-bezier(0.2, 0.6, 0.3, 1)',
       },
       colors: {
         primary: {

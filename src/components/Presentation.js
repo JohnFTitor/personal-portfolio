@@ -15,10 +15,10 @@ const Presentation = () => {
   }, [moved]);
 
   return (
-    <Box className="mt-16 flex flex-col pt-10 items-center">
-      <img src={animation} alt="Loading Animation" className="container px-10 animate-slide_up_half" />
+    <Box className="grid grid-cols-1 grid-rows-auto_1fr pt-14 h-full">
+      <img src={animation} alt="Loading Animation" className="container px-5 animate-slide_up_half row-auto mx-auto" />
       {moved ? (
-        <Box>
+        <Box className="mt-5 p-5 row-span-1 flex flex-col justify-evenly items-center">
           <h1 className="animate-fade text-center font-['Lato'] font-bold text-primary-900 m-2"> Andrés Felipe Arroyave Naranjo </h1>
           <p className="animate-fade text-center font-['Lato'] font-bold text-tertiary-800 text-2xl m-0">
             Frontend developer with a never ending hunger for learning
