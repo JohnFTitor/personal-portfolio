@@ -18,7 +18,7 @@ const Presentation = () => {
     <Box className="mt-16 flex flex-col pt-10 items-center">
       <img src={animation} alt="Loading Animation" className="container px-10 animate-slide_up_half" />
       {moved ? (
-        <>
+        <Box>
           <h1 className="animate-fade text-center font-['Lato'] font-bold text-primary-900 m-2"> Andrés Felipe Arroyave Naranjo </h1>
           <p className="animate-fade text-center font-['Lato'] font-bold text-tertiary-800 text-2xl m-0">
             Frontend developer with a never ending hunger for learning
@@ -34,7 +34,7 @@ const Presentation = () => {
               <LinkedInIcon className="text-4xl text-white" />
             </IconButton>
           </Box>
-        </>
+        </Box>
       ) : null}
     </Box>
   );

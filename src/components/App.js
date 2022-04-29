@@ -3,7 +3,7 @@ import Header from './Header';
 import HomePage from './Home';
 
 const App = () => (
-  <div>
+  <div className="app">
     <Header />
     <HomePage />
   </div>

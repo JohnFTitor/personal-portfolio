@@ -13,9 +13,9 @@ const HomePage = () => {
   }, [loaded]);
 
   return (
-    <>
+    <main>
       { loaded ? <Presentation /> : <Loading animation={animation} />}
-    </>
+    </main>
   );
 };
 
