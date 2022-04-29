@@ -45,7 +45,7 @@ module.exports = {
         slide_up: 'slide_up 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
         slide_down: 'slide_down 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
         slide_right: 'slide_right 1s cubic-bezier(0.2, 0.85, 0.9, 1)',
-        slide_up_half: 'slide_up_half 1s cubic-bezier(0.2, 0.6, 0.3, 1)',
+        slide_up_half: 'slide_up_half 1s cubic-bezier(0.2, 0.7, 0.3, 1)',
       },
       colors: {
         primary: {

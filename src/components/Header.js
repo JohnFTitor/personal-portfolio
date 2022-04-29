@@ -4,7 +4,7 @@ import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
 import { IconButton } from '@mui/material';
 
 const Header = () => (
-  <header className="flex p-1 px-4 container justify-between items-center">
+  <header className="flex p-1 px-4 w-full justify-between items-center">
     <IconButton className="animate-slide_left">
       <MenuIcon fontSize="large" className="text-primary-1000 text-5xl" />
     </IconButton>

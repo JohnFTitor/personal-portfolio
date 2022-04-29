@@ -9,7 +9,7 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoaded(true);
-    }, 4000);
+    }, 2000);
   }, [loaded]);
 
   return (
