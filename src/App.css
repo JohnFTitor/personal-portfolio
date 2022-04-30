@@ -4,9 +4,9 @@
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr;
-  grid-template-areas: 
-  "navigation"
-  "page_content";
+  grid-template-areas:
+    "navigation"
+    "page_content";
 }
 
 header {
