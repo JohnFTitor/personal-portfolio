@@ -1,0 +1,19 @@
+.app {
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "navigation"
+    "page_content";
+}
+
+header {
+  grid-area: navigation;
+}
+
+main {
+  grid-area: page_content;
+  overflow: auto;
+}
