@@ -5,7 +5,7 @@ import Menu from './Menu';
 
 const Header = () => {
   const [menuActive, setMenu] = useState(false);
-  const [animation, setAnimation] = useState('animate-slide_in');
+  const [translation, setTranslation] = useState('-translate-x-full');
   const [classes, setClasses] = useState({
     color: 'bg-primary-1000',
     opacity: 'opacity-100',
@@ -15,22 +15,22 @@ const Header = () => {
 
   const toggleMenu = () => {
     if (menuActive) {
-      setAnimation('animate-slide_out');
-      setTimeout(() => { setMenu(false); }, 700);
+      setTranslation('-translate-x-full');
       setClasses({
         color: 'bg-primary-1000',
         opacity: 'opacity-100',
         rotateUp: null,
         rotateDown: null,
       });
+      setMenu(false);
     } else {
-      setAnimation('animate-slide_in');
+      setTranslation('translate-x-0');
       setMenu(true);
       setClasses({
         color: 'bg-primary-50',
         opacity: 'opacity-0',
-        rotateUp: 'rotate-up',
-        rotateDown: 'rotate-down',
+        rotateUp: '-rotate-40',
+        rotateDown: 'rotate-40',
       });
     }
   };
@@ -45,7 +45,7 @@ const Header = () => {
       <IconButton className="border-4 border-primary-1000 border-solid h-fit p-0 animate-slide_down">
         <VolumeMuteIcon fontSize="large" className="text-primary-1000 text-4xl" />
       </IconButton>
-      {(menuActive && <Menu animation={animation} />)}
+      <Menu translation={translation} />
     </header>
   );
 };

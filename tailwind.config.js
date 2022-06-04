@@ -9,6 +9,9 @@ module.exports = {
         display: ['IBM Plex Mono', 'Menlo', 'monospace'],
         body: ['IBM Plex Mono', 'Menlo', 'monospace'],
       },
+      rotate: {
+        40: '40deg',
+      },
       borderRadius: {
         large: '50px',
       },

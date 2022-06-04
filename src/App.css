@@ -17,11 +17,3 @@ main {
   grid-area: page_content;
   overflow: auto;
 }
-
-.rotate-down {
-  transform: rotate(40deg);
-}
-
-.rotate-up {
-  transform: rotate(-40deg);
-}
