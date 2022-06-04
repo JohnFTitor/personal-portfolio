@@ -1,17 +1,53 @@
-import React from 'react';
-import MenuIcon from '@mui/icons-material/Menu';
+import React, { useState } from 'react';
 import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
-import { IconButton } from '@mui/material';
+import { IconButton, Box } from '@mui/material';
+import Menu from './Menu';
 
-const Header = () => (
-  <header className="flex p-1 px-4 w-full justify-between items-center">
-    <IconButton className="animate-slide_left">
-      <MenuIcon fontSize="large" className="text-primary-1000 text-5xl" />
-    </IconButton>
-    <IconButton className="border-4 border-primary-1000 border-solid h-fit p-0 animate-slide_down">
-      <VolumeMuteIcon fontSize="large" className="text-primary-1000 text-4xl" />
-    </IconButton>
-  </header>
-);
+const Header = () => {
+  const [menuActive, setMenu] = useState(false);
+  const [translation, setTranslation] = useState('-translate-x-full');
+  const [classes, setClasses] = useState({
+    color: 'bg-primary-1000',
+    opacity: 'opacity-100',
+    rotateUp: null,
+    rotateDown: null,
+  });
+
+  const toggleMenu = () => {
+    if (menuActive) {
+      setTranslation('-translate-x-full');
+      setClasses({
+        color: 'bg-primary-1000',
+        opacity: 'opacity-100',
+        rotateUp: null,
+        rotateDown: null,
+      });
+      setMenu(false);
+    } else {
+      setTranslation('translate-x-0');
+      setMenu(true);
+      setClasses({
+        color: 'bg-primary-50',
+        opacity: 'opacity-0',
+        rotateUp: '-rotate-40',
+        rotateDown: 'rotate-40',
+      });
+    }
+  };
+
+  return (
+    <header className="flex p-2 px-4 w-full justify-between items-center">
+      <IconButton onClick={toggleMenu} className="relative z-20 flex flex-col justify-between w-10 h-10 animate-slide_left gap-1">
+        <Box className={`${classes.color} h-1 w-8 origin-top-left transition-all ${classes.rotateDown}`} />
+        <Box className={`bg-primary-1000 h-1 w-8 transition-all ${classes.opacity}`} />
+        <Box className={`${classes.color} h-1 w-8 origin-bottom-left transition-all ${classes.rotateUp}`} />
+      </IconButton>
+      <IconButton className="border-4 border-primary-1000 border-solid h-fit p-0 animate-slide_down">
+        <VolumeMuteIcon fontSize="large" className="text-primary-1000 text-4xl" />
+      </IconButton>
+      <Menu translation={translation} toggleMenu={toggleMenu} />
+    </header>
+  );
+};
 
 export default Header;

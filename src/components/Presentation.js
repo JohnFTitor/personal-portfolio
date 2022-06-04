@@ -21,7 +21,7 @@ const Presentation = () => {
       <img src={animation} alt="Loading Animation" className="container px-5 animate-slide_up_half row-auto mx-auto" />
       {moved ? (
         <Box className="mt-5 p-5 row-span-1 flex flex-col justify-evenly items-center">
-          <h1 className="animate-fade text-center font-['Lato'] font-bold text-primary-900 m-2"> Andrés Felipe Arroyave Naranjo </h1>
+          <h1 className="animate-fade text-center font-['Lato'] font-bold text-primary-900 text-3xl m-2"> Andrés Felipe Arroyave Naranjo </h1>
           <p className="animate-fade text-center font-['Lato'] font-bold text-tertiary-800 text-2xl m-0">
             Frontend developer with a never ending hunger for learning
           </p>
@@ -36,7 +36,7 @@ const Presentation = () => {
               <AiFillMediumCircle fill="#fff" className="w-14 h-14 bg-red-900 rounded-full p-1 animate-slide_up" />
             </a>
             <a href="https://angel.co/u/johnftitor" target="_blank" rel="noreferrer" className="leading-none">
-              <SiAngellist fill="#000" className="w-14 h-14 border-solid border-1 border-black rounded-full p-1 animate-slide_right" />
+              <SiAngellist fill="#000" className="w-14 h-14 p-1 animate-slide_right" />
             </a>
             <a href="https://www.linkedin.com/in/andresarroyavenaranjo/" target="_blank" rel="noreferrer" className="bg-primary-700 animate-slide_up p-2 leading-none rounded-full flex items-center h-fit">
               <LinkedInIcon className="text-4xl text-white" />
