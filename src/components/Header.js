@@ -45,7 +45,7 @@ const Header = () => {
       <IconButton className="border-4 border-primary-1000 border-solid h-fit p-0 animate-slide_down">
         <VolumeMuteIcon fontSize="large" className="text-primary-1000 text-4xl" />
       </IconButton>
-      <Menu translation={translation} />
+      <Menu translation={translation} toggleMenu={toggleMenu} />
     </header>
   );
 };
