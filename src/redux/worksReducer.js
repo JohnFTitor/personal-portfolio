@@ -43,10 +43,7 @@ export { getProjects };
 // Define Reducer
 const projectsReducer = createReducer(initialState, (builder) => {
   builder
-    .addCase(getProjects, (state) => {
-      console.log('just filling');
-      return state;
-    });
+    .addCase(getProjects, (state) => state);
 });
 
 export default projectsReducer;
