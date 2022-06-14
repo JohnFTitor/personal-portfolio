@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import animation from '../assets/gifs/coding.gif';
 import Loading from './Loading';
-import animation from '../assets/gifs/okabeandkurisu.gif';
-import Presentation from './Presentation';
+import Projects from './Projects';
 
-const HomePage = () => {
+const WorksPage = () => {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -14,9 +14,9 @@ const HomePage = () => {
 
   return (
     <main>
-      { loaded ? <Presentation /> : <Loading animation={animation} />}
+      { loaded ? <Projects /> : <Loading animation={animation} />}
     </main>
   );
 };
 
-export default HomePage;
+export default WorksPage;
