@@ -7,8 +7,7 @@ const Projects = () => {
   const projects = useSelector((state) => state);
 
   return (
-    <Box>
-      <h1> Works Section </h1>
+    <Box className="w-full h-full">
       <ul>
         {projects.map((project) => (
           <Project
