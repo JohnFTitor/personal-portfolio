@@ -9,11 +9,12 @@ const Projects = () => {
   return (
     <Box className="w-full h-full overflow-hidden">
       <ul id="projects" className="h-full snap-y snap-mandatory snap-always overflow-y-scroll">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <Project
             key={project.id}
             project={project}
-            aos="fade-in"
+            first={index === 0}
+            last={index === (projects.length - 1)}
           />
         ))}
       </ul>

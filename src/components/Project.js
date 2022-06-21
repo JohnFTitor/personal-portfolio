@@ -8,7 +8,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import useWindowSize from '../util/useWindowSize';
 
 const Project = (props) => {
-  const { project } = props;
+  const { project, first, last } = props;
 
   const {
     id,
@@ -21,11 +21,18 @@ const Project = (props) => {
   } = project;
 
   const size = useWindowSize();
+  const parent = document.querySelector('#projects');
 
   const scrollDown = () => {
-    const parent = document.querySelector('#projects');
     parent.scroll({
       top: parent.scrollTop + size.height,
+      behavior: 'smooth',
+    });
+  };
+
+  const scrollUp = () => {
+    parent.scroll({
+      top: parent.scrollTop - size.height,
       behavior: 'smooth',
     });
   };
@@ -53,9 +60,18 @@ const Project = (props) => {
         </a>
       </Box>
       <Box className="flex justify-between items-center w-full max-w-sm px-4">
-        <IconButton onClick={scrollDown} className="bg-primary-500 rotate-90 p-1">
-          <ArrowForwardIosIcon className="text-white text-3xl" />
-        </IconButton>
+        <Box>
+          {!first && (
+          <IconButton onClick={scrollUp} className="bg-primary-500 -rotate-90 p-1 mr-2">
+            <ArrowForwardIosIcon className="text-white text-3xl" />
+          </IconButton>
+          )}
+          {(!last) && (
+          <IconButton onClick={scrollDown} className="bg-primary-500 rotate-90 p-1">
+            <ArrowForwardIosIcon className="text-white text-3xl" />
+          </IconButton>
+          )}
+        </Box>
         <Link to={`/works/${id}`} className="text-white bg-primary-1000 flex gap-5 items-center py-1 px-3 uppercase font-semibold text-lg no-underline"> See More </Link>
       </Box>
     </li>
@@ -77,6 +93,8 @@ Project.propTypes = {
     live: PropTypes.string.isRequired,
     source: PropTypes.string.isRequired,
   }).isRequired,
+  first: PropTypes.bool.isRequired,
+  last: PropTypes.bool.isRequired,
 };
 
 export default Project;
