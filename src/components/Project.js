@@ -5,6 +5,7 @@ import { Box, IconButton } from '@mui/material';
 import WebIcon from '@mui/icons-material/Web';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import useWindowSize from '../util/useWindowSize';
 
 const Project = (props) => {
   const { project } = props;
@@ -19,8 +20,18 @@ const Project = (props) => {
     source,
   } = project;
 
+  const size = useWindowSize();
+
+  const scrollDown = () => {
+    const parent = document.querySelector('#projects');
+    parent.scroll({
+      top: parent.scrollTop + size.height,
+      behavior: 'smooth',
+    });
+  };
+
   return (
-    <Box className="flex flex-col items-center w-full gap-5 pt-5 pb-16">
+    <li className="flex flex-col items-center w-full gap-5 pt-5 pb-8 snap-start h-full overflow-y-scroll">
       <h2 className="text-3xl text-primary-1000 font-medium capitalize">{title}</h2>
       <img src={image} alt={title} />
       <ul className="flex flex-wrap w-full items-center justify-center gap-x-5 gap-y-2 mb-5 px-3">
@@ -28,7 +39,9 @@ const Project = (props) => {
           <li key={tag.id} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag.description}</li>
         ))}
       </ul>
-      <p className="text-ellipsis overflow-hidden max-h-48 text-xl text-primary-1000 text-center w-full px-3 mb-5">{description}</p>
+      <Box>
+        <p className="text-ellipsis overflow-hidden max-h-48 text-xl text-primary-1000 text-center w-full px-3 mb-5">{description}</p>
+      </Box>
       <Box className="flex gap-3 flex-wrap mb-6">
         <a href={live} target="_blank" rel="noreferrer" className="text-white bg-primary-1000 flex gap-5 items-center py-1 px-3 uppercase font-semibold">
           <p className="text-lg">Live</p>
@@ -40,12 +53,12 @@ const Project = (props) => {
         </a>
       </Box>
       <Box className="flex justify-between items-center w-full max-w-sm px-4">
-        <IconButton className="bg-primary-500 rotate-90 p-1">
+        <IconButton onClick={scrollDown} className="bg-primary-500 rotate-90 p-1">
           <ArrowForwardIosIcon className="text-white text-3xl" />
         </IconButton>
         <Link to={`/works/${id}`} className="text-white bg-primary-1000 flex gap-5 items-center py-1 px-3 uppercase font-semibold text-lg no-underline"> See More </Link>
       </Box>
-    </Box>
+    </li>
   );
 };
 
