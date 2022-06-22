@@ -13,6 +13,8 @@ const initialState = [
     Cras nec malesuada lacus. Etiam pharetra felis a ex lacinia, vitae interdum felis volutpat. Fusce vitae nisl urna. Donec et erat vitae ipsum suscipit varius eget elementum diam. Aenean suscipit tempor pretium. Aliquam ornare justo vitae tellus egestas feugiat. Fusce a eleifend justo. Praesent magna massa, consequat a suscipit non, faucibus eu tellus. Nullam non leo commodo, commodo mauris in, feugiat sem. Suspendisse efficitur mi at ipsum porttitor porttitor. Nulla sit amet eros enim.`,
     live: 'https://github.com/JohnFTitor/personal-portfolio',
     source: 'https://github.com/JohnFTitor/personal-portfolio',
+    youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    mobileImage: 'https://static.wixstatic.com/media/ea6ac8_b6b0cbe25615488e855f515846354dda~mv2.jpg/v1/fill/w_924,h_607,al_c,q_90/ea6ac8_b6b0cbe25615488e855f515846354dda~mv2.jpg',
   },
   {
     id: 2,
@@ -24,6 +26,8 @@ const initialState = [
     Cras nec malesuada lacus. Etiam pharetra felis a ex lacinia, vitae interdum felis volutpat. Fusce vitae nisl urna. Donec et erat vitae ipsum suscipit varius eget elementum diam. Aenean suscipit tempor pretium. Aliquam ornare justo vitae tellus egestas feugiat. Fusce a eleifend justo. Praesent magna massa, consequat a suscipit non, faucibus eu tellus. Nullam non leo commodo, commodo mauris in, feugiat sem. Suspendisse efficitur mi at ipsum porttitor porttitor. Nulla sit amet eros enim.`,
     live: 'https://github.com/JohnFTitor/personal-portfolio',
     source: 'https://github.com/JohnFTitor/personal-portfolio',
+    youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    mobileImage: 'https://static.wixstatic.com/media/ea6ac8_b6b0cbe25615488e855f515846354dda~mv2.jpg/v1/fill/w_924,h_607,al_c,q_90/ea6ac8_b6b0cbe25615488e855f515846354dda~mv2.jpg',
   },
   {
     id: 3,
@@ -35,6 +39,8 @@ const initialState = [
     Cras nec malesuada lacus. Etiam pharetra felis a ex lacinia, vitae interdum felis volutpat. Fusce vitae nisl urna. Donec et erat vitae ipsum suscipit varius eget elementum diam. Aenean suscipit tempor pretium. Aliquam ornare justo vitae tellus egestas feugiat. Fusce a eleifend justo. Praesent magna massa, consequat a suscipit non, faucibus eu tellus. Nullam non leo commodo, commodo mauris in, feugiat sem. Suspendisse efficitur mi at ipsum porttitor porttitor. Nulla sit amet eros enim.`,
     live: 'https://github.com/JohnFTitor/personal-portfolio',
     source: 'https://github.com/JohnFTitor/personal-portfolio',
+    youtube: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    mobileImage: 'https://static.wixstatic.com/media/ea6ac8_b6b0cbe25615488e855f515846354dda~mv2.jpg/v1/fill/w_924,h_607,al_c,q_90/ea6ac8_b6b0cbe25615488e855f515846354dda~mv2.jpg',
   },
 ];
 
