@@ -4,6 +4,7 @@ import Header from './Header';
 import HomePage from './Home';
 import WorksPage from './Works';
 import DetailsPage from './DetailsPage';
+import AboutPage from './AboutPage';
 
 const App = () => (
   <BrowserRouter>
@@ -11,6 +12,7 @@ const App = () => (
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/works" element={<WorksPage />} />
         <Route path="/works/:id" element={<DetailsPage />} />
       </Routes>
