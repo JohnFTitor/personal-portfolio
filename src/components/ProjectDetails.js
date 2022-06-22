@@ -56,7 +56,7 @@ const ProjectDetails = () => {
       </Box>
       <ul className="flex flex-wrap w-full items-center justify-center gap-x-5 gap-y-2 px-3">
         {project.tags.map((tag) => (
-          <li key={tag.id} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag.description}</li>
+          <li key={uuidv4()} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag}</li>
         ))}
       </ul>
       <Box className="w-full px-3">

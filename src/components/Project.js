@@ -5,6 +5,7 @@ import { Box, IconButton } from '@mui/material';
 import WebIcon from '@mui/icons-material/Web';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { v4 as uuidv4 } from 'uuid';
 import useWindowSize from '../util/useWindowSize';
 
 const Project = (props) => {
@@ -45,7 +46,7 @@ const Project = (props) => {
       </Box>
       <ul className="flex flex-wrap w-full items-center justify-center gap-x-5 gap-y-2 mb-5 px-3">
         {tags.map((tag) => (
-          <li key={tag.id} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag.description}</li>
+          <li key={uuidv4()} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag}</li>
         ))}
       </ul>
       <Box>
@@ -85,12 +86,7 @@ Project.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        description: PropTypes.string.isRequired,
-      }).isRequired,
-    ).isRequired,
+    tags: PropTypes.arrayOf(String).isRequired,
     description: PropTypes.string.isRequired,
     live: PropTypes.string.isRequired,
     source: PropTypes.string.isRequired,
