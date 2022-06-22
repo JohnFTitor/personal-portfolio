@@ -18,3 +18,8 @@ main {
   overflow: auto;
   height: 100%;
 }
+
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
