@@ -1,7 +1,7 @@
 import { Box, IconButton } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import WebIcon from '@mui/icons-material/Web';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -29,17 +29,26 @@ const ProjectDetails = () => {
   };
 
   return (
-    <Box className="relative flex flex-col gap-10 items-center pt-5">
-      <h1 className="text-3xl text-primary-1000 font-medium capitalize">{project.title}</h1>
-      <img src={project.image} alt={project.title} />
-      <p className="text-lg text-primary-1000 text-center w-full px-3 mb-5">
+    <Box className="relative flex flex-col gap-8 items-center pt-5">
+      <Box className="relative flex w-full px-5 justify-center items-center">
+        <Link className="absolute left-2 animate-slow_fade" to="/works">
+          <ArrowForwardIosIcon className="text-primary-500 -rotate-180 text-3xl" />
+        </Link>
+        <h1 className="text-3xl text-primary-1000 font-medium capitalize animate-slide_right">{project.title}</h1>
+      </Box>
+      <Box className="px-3">
+        <img className="animate-fade" src={project.image} alt={project.title} />
+      </Box>
+      <p className="text-lg text-primary-1000 w-full px-5 mb-5 animate-slide_left">
         {firstParagraph}
       </p>
-      <img src={project.mobileImage} alt={project.title} />
-      <Box>
+      <Box className="px-3">
+        <img src={project.mobileImage} alt={project.title} className="animate-slide_up" />
+      </Box>
+      <Box className="animate-slide_left">
         { (paragraphs.length > 0) && (
           paragraphs.map((paragraph) => (
-            <p key={uuidv4()} className="text-lg text-primary-1000 text-center w-full mb-3 px-3">
+            <p key={uuidv4()} className="text-lg text-primary-1000 w-full mb-3 px-5">
               {paragraph}
             </p>
           ))
@@ -50,7 +59,7 @@ const ProjectDetails = () => {
           <li key={tag.id} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag.description}</li>
         ))}
       </ul>
-      <Box className="w-full px-5">
+      <Box className="w-full px-3">
         <iframe
           src={project.demo}
           title="YouTube video player"
