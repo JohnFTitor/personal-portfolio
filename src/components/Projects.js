@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import Project from './Project';
 
 const Projects = () => {
-  const projects = useSelector((state) => state);
+  const { projects } = useSelector((state) => state);
 
   return (
     <Box className="w-full h-full overflow-hidden">

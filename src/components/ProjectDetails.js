@@ -8,7 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const ProjectDetails = () => {
-  const projects = useSelector((state) => state);
+  const { projects } = useSelector((state) => state);
   const { id } = useParams();
   const project = projects?.filter((project) => project.id.toString() === id)[0];
 
