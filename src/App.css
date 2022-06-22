@@ -16,4 +16,5 @@ header {
 main {
   grid-area: page_content;
   overflow: auto;
+  height: 100%;
 }

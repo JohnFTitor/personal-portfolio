@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import Loading from './Loading';
+import React from 'react';
+import Page from './Page';
 import animation from '../assets/gifs/okabeandkurisu.gif';
 import Presentation from './Presentation';
 
-const HomePage = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 2000);
-  }, [loaded]);
-
-  return (
-    <main>
-      { loaded ? <Presentation /> : <Loading animation={animation} />}
-    </main>
-  );
-};
+const HomePage = () => (
+  <Page element={<Presentation />} animation={animation} />
+);
 
 export default HomePage;
