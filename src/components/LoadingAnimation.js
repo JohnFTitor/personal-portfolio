@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Box } from '@mui/material';
 
-const Loading = (props) => {
+const LoadingAnimation = (props) => {
   const [circles, setCircles] = useState([
     <Box key={0} className="pr-3">
       <CircleIcon className="animate-fade text-primary-800" />
@@ -37,8 +37,8 @@ const Loading = (props) => {
   );
 };
 
-Loading.propTypes = {
+LoadingAnimation.propTypes = {
   animation: PropTypes.string.isRequired,
 };
 
-export default Loading;
+export default LoadingAnimation;

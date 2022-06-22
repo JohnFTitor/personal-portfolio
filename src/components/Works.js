@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import animation from '../assets/gifs/coding.gif';
-import Loading from './Loading';
+import Page from './Page';
 import Projects from './Projects';
 
-const WorksPage = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoaded(true);
-    }, 1000);
-  }, [loaded]);
-
-  return (
-    <main>
-      { loaded ? <Projects /> : <Loading animation={animation} />}
-    </main>
-  );
-};
+const WorksPage = () => (
+  <Page element={<Projects />} animation={animation} />
+);
 
 export default WorksPage;
