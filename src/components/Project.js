@@ -49,25 +49,25 @@ const Project = (props) => {
       <Box>
         <p className="text-ellipsis overflow-hidden max-h-48 text-xl text-primary-1000 text-center w-full px-3 mb-5">{description}</p>
       </Box>
-      <Box className="flex gap-3 flex-wrap mb-6">
-        <a href={live} target="_blank" rel="noreferrer" className="text-white bg-primary-1000 flex gap-5 items-center py-1 px-3 uppercase font-semibold">
+      <Box className="flex gap-3 max-w-md justify-center flex-wrap mb-6 w-full px-2">
+        <a href={live} target="_blank" rel="noreferrer" className="text-white flex-1 bg-primary-1000 flex gap-5 items-center justify-between py-1 px-3 uppercase font-semibold">
           <p className="text-lg">Live</p>
           <WebIcon className="text-3xl text-white" />
         </a>
-        <a href={source} target="_blank" rel="noreferrer" className="text-white bg-primary-1000 flex gap-5 items-center py-1 px-3 uppercase font-semibold">
+        <a href={source} target="_blank" rel="noreferrer" className="text-white flex-1 bg-primary-1000 flex gap-5 items-center justify-between py-1 px-3 uppercase font-semibold">
           <p className="text-lg">Source</p>
           <GitHubIcon className="text-3xl text-white" />
         </a>
       </Box>
       <Box className="flex justify-between items-center w-full max-w-sm px-4">
         <Box>
-          {!first && (
-          <IconButton onClick={scrollUp} className="bg-primary-500 -rotate-90 p-1 mr-2">
+          {(!last) && (
+          <IconButton onClick={scrollDown} className="bg-primary-500 rotate-90 p-1 mr-2">
             <ArrowForwardIosIcon className="text-white text-3xl" />
           </IconButton>
           )}
-          {(!last) && (
-          <IconButton onClick={scrollDown} className="bg-primary-500 rotate-90 p-1">
+          {!first && (
+          <IconButton onClick={scrollUp} className="bg-primary-500 -rotate-90 p-1">
             <ArrowForwardIosIcon className="text-white text-3xl" />
           </IconButton>
           )}
