@@ -1,31 +1,28 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import useWindowSize from '../util/useWindowSize';
 
 const Ability = (props) => {
   const { skill } = props;
 
+  const windowSize = useWindowSize();
+
   useEffect(() => {
-    const learningContainer = document.querySelector('.learning');
     const elements = document.querySelectorAll('.ability');
 
     elements.forEach((element) => {
-      const width = learningContainer.offsetWidth - element.offsetWidth;
+      const learningContainer = element.parentNode;
+      const totalWidth = learningContainer.offsetWidth - element.offsetWidth;
 
-      const rect = element.getBoundingClientRect();
-      let position = rect.left;
+      let position = Math.floor(Math.random() * (learningContainer.offsetWidth - 100));
       let pace = 1;
 
       const move = () => {
         window.requestAnimationFrame(move);
         position += pace;
 
-        if (position >= width) {
-          pace = -1;
-          position += pace;
-        }
-
-        if (position <= 0) {
-          pace = 1;
+        if (position >= totalWidth || position <= 0) {
+          pace = -pace;
           position += pace;
         }
 
@@ -35,7 +32,7 @@ const Ability = (props) => {
 
       move();
     });
-  }, []);
+  }, [windowSize.width]);
 
   return (
     <li
