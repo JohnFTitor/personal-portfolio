@@ -1,4 +1,4 @@
-import { Box, IconButton } from '@mui/material';
+import { Box } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import WebIcon from '@mui/icons-material/Web';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ScrollUpButton from './ScrollUpButton';
 
 const ProjectDetails = () => {
   const { projects } = useSelector((state) => state);
@@ -18,15 +19,6 @@ const ProjectDetails = () => {
 
   const paragraphs = project.description.split('\n');
   const firstParagraph = paragraphs.shift();
-
-  const parent = document.querySelector('main');
-
-  const scrollUp = () => {
-    parent.scroll({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
 
   return (
     <Box className="relative flex flex-col gap-8 items-center pt-5">
@@ -79,9 +71,7 @@ const ProjectDetails = () => {
         </a>
       </Box>
       <Box className="w-full pb-3 pl-3">
-        <IconButton onClick={scrollUp} className="bg-primary-500 -rotate-90 p-1">
-          <ArrowForwardIosIcon className="text-white text-3xl" />
-        </IconButton>
+        <ScrollUpButton />
       </Box>
     </Box>
   );

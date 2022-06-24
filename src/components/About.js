@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Skill from './Skill';
 import animation from '../assets/gifs/learning.gif';
 import Ability from './Ability';
+import ScrollUpButton from './ScrollUpButton';
 
 const About = () => {
   const { about } = useSelector((state) => state);
@@ -20,7 +21,7 @@ const About = () => {
   } = about;
 
   return (
-    <Box className="flex flex-col gap-10 items-center text-primary-1000 pt-5 px-5">
+    <Box className="flex flex-col gap-10 items-center text-primary-1000 pt-5 px-5 pb-5">
       <h1 className="text-3xl font-medium">About Me</h1>
       <Box className="px-5">
         <img src={profile} alt="profile" />
@@ -55,18 +56,25 @@ const About = () => {
           <img src={animation} alt="studying animation" />
         </Box>
       </Box>
-      <Box className="flex flex-col gap-5">
-        {
-          likes.split('\n').map((paragraph) => (
-            <p key={uuidv4()} className="text-center text-lg">{paragraph}</p>
-          ))
-        }
+      <Box className="w-full">
+        <h2 className="text-3xl font-medium mb-5 text-primary-900">Likes</h2>
+        <Box className="flex flex-col gap-5">
+          {
+            likes.split('\n').map((paragraph) => (
+              <p key={uuidv4()} className="text-center text-lg">{paragraph}</p>
+            ))
+          }
+        </Box>
       </Box>
-      <Box>
+      <h2 className="text-3xl font-medium mb-5 text-primary-900 w-full">Hobbies</h2>
+      <Box className="bg-primary-1000 p-7 text-2xl font-medium text-white">
         <p>{`Currently Reading: ${reading}`}</p>
       </Box>
-      <Box>
+      <Box className="bg-primary-1000 p-7 text-2xl font-medium text-white mb-10">
         <p>{`Currently Writing: ${writing}`}</p>
+      </Box>
+      <Box className="w-full">
+        <ScrollUpButton />
       </Box>
     </Box>
   );
