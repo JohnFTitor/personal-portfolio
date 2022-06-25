@@ -8,7 +8,7 @@ const Projects = () => {
 
   return (
     <Box className="w-full h-full overflow-hidden">
-      <ul id="projects" className="h-full snap-y snap-mandatory snap-always overflow-y-scroll">
+      <ul id="projects" className="h-content-screen snap-y snap-mandatory snap-always overflow-y-scroll">
         {projects.map((project, index) => (
           <Project
             key={project.id}

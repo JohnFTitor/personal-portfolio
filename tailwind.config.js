@@ -14,6 +14,9 @@ module.exports = {
       },
       rotate: {
         40: '40deg',
+        20: '20deg',
+        15: '15deg',
+        10: '10deg',
       },
       borderRadius: {
         large: '50px',
