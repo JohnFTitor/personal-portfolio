@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex p-2 px-4 w-full justify-between items-center">
+    <header className="flex sticky top-0 bg-white bg-opacity-90 z-50 h-14 py-2 px-4 w-full justify-between items-center">
       <IconButton onClick={toggleMenu} className="relative z-20 flex flex-col justify-between w-10 h-10 animate-slide_left gap-1">
         <Box className={`${classes.color} h-1 w-8 origin-top-left transition-all ${classes.rotateDown}`} />
         <Box className={`bg-primary-1000 h-1 w-8 transition-all ${classes.opacity}`} />

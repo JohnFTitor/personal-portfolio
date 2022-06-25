@@ -3,10 +3,8 @@ import { IconButton } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const ScrollUpButton = () => {
-  const parent = document.querySelector('main');
-
   const scrollUp = () => {
-    parent.scroll({
+    window.scroll({
       top: 0,
       behavior: 'smooth',
     });
