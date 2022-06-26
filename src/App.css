@@ -1,3 +1,7 @@
+.min-h-content-screen {
+  min-height: calc(100vh - 56px);
+}
+
 .h-content-screen {
   height: calc(100vh - 56px);
 }
@@ -5,4 +9,20 @@
 iframe {
   aspect-ratio: 16/9;
   width: 100%;
+}
+
+* {
+  transition: background-color 0.5s ease-in-out, color 0.2s ease-in;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding-left: 288px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  main {
+    padding-left: 320px;
+  }
 }
