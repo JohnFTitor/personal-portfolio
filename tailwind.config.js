@@ -107,6 +107,9 @@ module.exports = {
           1000: '#0b0d0d',
         },
       },
+      maxWidth: {
+        72: '288px',
+      },
     },
   },
   plugins: [],
