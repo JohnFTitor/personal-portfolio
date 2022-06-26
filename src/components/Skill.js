@@ -11,10 +11,10 @@ const rotation = [
 ];
 
 const colors = [
-  'bg-primary-900',
-  'bg-primary-500',
-  'bg-tertiary-700',
-  'bg-red-900',
+  'bg-primary-900 dark:bg-primary-100',
+  'bg-primary-500 dark:bg-primary-300',
+  'bg-tertiary-700 dark:bg-tertiary-100',
+  'bg-red-900 dark:bg-red-100',
 ];
 
 const getRandomStyles = () => {
@@ -28,7 +28,7 @@ const Skill = (props) => {
   const { skill } = props;
 
   return (
-    <li className={`w-fit text-white font-medium rounded-xl origin-center box-border p-1 px-5 m-3 ${getRandomStyles()}`}>{skill}</li>
+    <li className={`w-fit text-white dark:text-zinc-900 font-medium rounded-xl origin-center box-border p-1 px-5 m-3 ${getRandomStyles()}`}>{skill}</li>
   );
 };
 

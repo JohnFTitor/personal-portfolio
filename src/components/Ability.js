@@ -36,7 +36,7 @@ const Ability = (props) => {
 
   return (
     <li
-      className="relative text-primary-500 left-5 text-lg font-medium ability w-fit"
+      className="relative text-primary-500 dark:text-primary-100 left-5 text-lg font-medium ability w-fit"
     >
       {skill}
     </li>
