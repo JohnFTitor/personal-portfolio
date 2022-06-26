@@ -17,7 +17,7 @@ const Presentation = () => {
   }, [moved]);
 
   return (
-    <Box className="grid grid-cols-1 grid-rows-auto_1fr pt-4 h-content-screen">
+    <Box className="grid grid-cols-1 grid-rows-auto_1fr pt-4 h-content-screen overflow-hidden">
       <img src={animation} alt="Loading Animation" className="container px-5 animate-slide_up_half row-auto mx-auto" />
       {moved ? (
         <Box className="mt-5 p-5 row-span-1 flex flex-col justify-evenly items-center">

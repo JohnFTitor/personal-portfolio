@@ -27,7 +27,7 @@ const Header = () => {
       setTranslation('translate-x-0');
       setMenu(true);
       setClasses({
-        color: 'bg-primary-50',
+        color: 'bg-primary-50 dark:bg-secondary-800',
         opacity: 'opacity-0',
         rotateUp: '-rotate-40',
         rotateDown: 'rotate-40',
