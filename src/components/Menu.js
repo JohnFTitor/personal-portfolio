@@ -10,6 +10,7 @@ const Menu = (props) => {
 
   const toggleDarkMode = () => {
     app.classList.toggle('dark');
+    localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
   };
 
   return (
