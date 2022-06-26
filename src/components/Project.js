@@ -40,42 +40,42 @@ const Project = (props) => {
 
   return (
     <li className="flex flex-col items-center w-full gap-5 pt-5 pb-8 snap-start h-full overflow-y-scroll animate-slide_in">
-      <h2 className="text-3xl text-primary-1000 font-medium capitalize">{title}</h2>
+      <h2 className="text-3xl text-primary-1000 dark:text-white font-medium capitalize">{title}</h2>
       <Box className="px-3">
         <img className="w-full" src={image} alt={title} />
       </Box>
       <ul className="flex flex-wrap w-full items-center justify-center gap-x-5 gap-y-2 mb-5 px-3">
         {tags.map((tag) => (
-          <li key={uuidv4()} className="text-xl text-primary-1000 font-medium border-solid border-2 border-primary-1000 py-0.5 px-2">{tag}</li>
+          <li key={uuidv4()} className="text-xl text-primary-1000 dark:text-primary-50 font-medium border-solid border-2 border-primary-1000 dark:border-primary-50 py-0.5 px-2">{tag}</li>
         ))}
       </ul>
       <Box>
-        <p className="text-ellipsis overflow-hidden max-h-48 text-xl text-primary-1000 text-center w-full px-3 mb-5">{description}</p>
+        <p className="text-ellipsis overflow-hidden max-h-48 text-xl text-primary-1000 dark:text-white text-center w-full px-3 mb-5">{description}</p>
       </Box>
       <Box className="flex gap-3 max-w-md justify-center flex-wrap mb-6 w-full px-2">
-        <a href={live} target="_blank" rel="noreferrer" className="text-white flex-1 bg-primary-1000 flex gap-5 items-center justify-between py-1 px-3 uppercase font-semibold">
+        <a href={live} target="_blank" rel="noreferrer" className="text-white dark:text-primary-1000 flex-1 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center justify-between py-1 px-3 uppercase font-semibold">
           <p className="text-lg">Live</p>
-          <WebIcon className="text-3xl text-white" />
+          <WebIcon className="text-3xl text-white dark:text-primary-1000" />
         </a>
-        <a href={source} target="_blank" rel="noreferrer" className="text-white flex-1 bg-primary-1000 flex gap-5 items-center justify-between py-1 px-3 uppercase font-semibold">
+        <a href={source} target="_blank" rel="noreferrer" className="text-white dark:text-primary-1000 flex-1 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center justify-between py-1 px-3 uppercase font-semibold">
           <p className="text-lg">Source</p>
-          <GitHubIcon className="text-3xl text-white" />
+          <GitHubIcon className="text-3xl text-white dark:text-primary-1000" />
         </a>
       </Box>
       <Box className="flex justify-between items-center w-full max-w-sm px-4">
         <Box>
           {(!last) && (
-          <IconButton onClick={scrollDown} className="bg-primary-500 rotate-90 p-1 mr-2">
-            <ArrowForwardIosIcon className="text-white text-3xl" />
+          <IconButton onClick={scrollDown} className="bg-primary-500 dark:bg-primary-50 rotate-90 p-1 mr-2">
+            <ArrowForwardIosIcon className="text-white dark:text-primary-1000 text-3xl" />
           </IconButton>
           )}
           {!first && (
-          <IconButton onClick={scrollUp} className="bg-primary-500 -rotate-90 p-1">
-            <ArrowForwardIosIcon className="text-white text-3xl" />
+          <IconButton onClick={scrollUp} className="bg-primary-500 dark:bg-primary-50 -rotate-90 p-1">
+            <ArrowForwardIosIcon className="text-white dark:text-primary-1000 text-3xl" />
           </IconButton>
           )}
         </Box>
-        <Link to={`/works/${id}`} className="text-white bg-primary-1000 flex gap-5 items-center py-1 px-3 uppercase font-semibold text-lg no-underline"> See More </Link>
+        <Link to={`/works/${id}`} className="text-white dark:text-primary-1000 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center py-1 px-3 uppercase font-semibold text-lg no-underline"> See More </Link>
       </Box>
     </li>
   );

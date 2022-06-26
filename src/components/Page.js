@@ -13,7 +13,7 @@ const Page = (props) => {
   }, [loaded]);
 
   return (
-    <main>
+    <main className="dark:bg-zinc-900">
       { loaded ? element : <LoadingAnimation animation={animation} />}
     </main>
   );
