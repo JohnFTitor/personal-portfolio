@@ -17,15 +17,15 @@ const Presentation = () => {
   }, [moved]);
 
   return (
-    <Box className="grid grid-cols-1 grid-rows-auto_1fr pt-4 h-content-screen overflow-hidden">
-      <img src={animation} alt="Loading Animation" className="container px-5 animate-slide_up_half row-auto mx-auto" />
+    <Box className="grid grid-cols-1 grid-rows-auto_1fr pt-4 min-h-content-screen">
+      <img src={animation} alt="Loading Animation" className="container max-w-md xl:max-w-lg 2xl:max-w-2xl px-5 animate-slide_up_half row-auto mx-auto" />
       {moved ? (
-        <Box className="mt-5 p-5 row-span-1 flex flex-col justify-evenly items-center">
-          <h1 className="animate-fade text-center font-['Lato'] font-bold text-primary-900 dark:text-primary-100 text-3xl m-2"> Andrés Felipe Arroyave Naranjo </h1>
-          <p className="animate-fade text-center font-['Lato'] font-bold text-tertiary-800 dark:text-white text-2xl m-0">
-            Frontend developer with a never ending hunger for learning
+        <Box className="mt-5 p-5 md:px-14 md:max-h-64 2xl:max-h-80 row-span-1 flex flex-col justify-evenly items-center md:items-end">
+          <h1 className="animate-fade text-center md:text-right 2xl:tracking-wide font-['Lato'] font-medium text-primary-900 dark:text-primary-100 text-3xl md:text-4xl 2xl:text-6xl m-2"> Andrés Felipe Arroyave Naranjo </h1>
+          <p className="animate-fade capitalize max-w-xl md:max-w-2xl xl:max-w-4xl 2xl:tracking-wide text-center md:text-right font-['Lato'] font-medium text-tertiary-800 dark:text-white text-2xl 2xl:text-3xl m-0">
+            Full-Stack developer with a never ending hunger for learning
           </p>
-          <Box className="container flex justify-evenly mt-5 flex-wrap gap-3">
+          <Box className="container max-w-sm flex justify-evenly mt-5 flex-wrap gap-3">
             <a href="https://github.com/JohnFTitor" target="_blank" rel="noreferrer" className="bg-tertiary-700 dark:bg-tertiary-100 animate-slide_up p-2 leading-none rounded-full flex items-center h-fit">
               <GitHubIcon className="text-4xl text-white dark:text-zinc-900" />
             </a>
