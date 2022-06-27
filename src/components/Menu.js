@@ -14,7 +14,7 @@ const Menu = (props) => {
 
   return (
     <Box className={`absolute top-0 left-0 h-screen w-screen overflow-auto max-w-72 2xl:max-w-xs z-40 bg-secondary-1000 dark:bg-secondary-100 rounded-r-large p-8 pt-12 flex flex-col items-center transition-transform ${translation}`}>
-      <Box onClick={toggleDarkMode} className="w-52 h-52 xl:w-56 xl:h-56 fill-primary-1000 dark:fill-secondary-50 hover:fill-secondary-50 dark:hover:fill-primary-1000 bg-secondary-400 dark:bg-secondary-800 hover:bg-zinc-800 dark:hover:bg-tertiary-50 rounded-full cursor-pointer flex justify-center items-center">
+      <Box onClick={toggleDarkMode} className="w-52 h-52 xl:w-56 xl:h-56 fill-primary-1000 dark:fill-secondary-50 dark:hover:fill-secondary-50 hover:fill-primary-1000 bg-secondary-400 dark:bg-secondary-800 dark:hover:bg-zinc-800 hover:bg-tertiary-50 rounded-full cursor-pointer flex justify-center items-center">
         <svg className="w-3/4 h-fit fill-inherit" xmlns="http://www.w3.org/2000/svg" zoomAndPan="magnify" viewBox="0 0 375 374.999991" preserveAspectRatio="xMidYMid meet" version="1.0">
           <defs>
             <g />
