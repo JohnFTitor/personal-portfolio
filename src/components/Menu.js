@@ -30,7 +30,7 @@ const Menu = (props) => {
       </Box>
       <div className="relative z-40 mt-5 xl:mt-20 flex flex-col w-full p-5 overflow-auto font-medium gap-5 2xl:gap-8">
         <Link onClick={toggleMenu} to="/" className="text-secondary-100 dark:text-secondary-800 text-4xl 2xl:text-menu 2xl:font-bold"> Home </Link>
-        <Link onClick={toggleMenu} to="/works" className="text-secondary-100 dark:text-secondary-800 text-4xl 2xl:text-menu 2xl:font-bold"> Works </Link>
+        <Link onClick={toggleMenu} to="/projects" className="text-secondary-100 dark:text-secondary-800 text-4xl 2xl:text-menu 2xl:font-bold"> Projects </Link>
         <Link onClick={toggleMenu} to="/about" className="text-secondary-100 dark:text-secondary-800 text-4xl 2xl:text-menu 2xl:font-bold"> About </Link>
       </div>
       <svg className="absolute bottom-0 left-0 w-full h-fit" viewBox="0 0 280 111" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -3,8 +3,8 @@ import animation from '../assets/gifs/coding.gif';
 import Page from './Page';
 import Projects from './Projects';
 
-const WorksPage = () => (
+const WorkPage = () => (
   <Page element={<Projects />} animation={animation} />
 );
 
-export default WorksPage;
+export default WorkPage;

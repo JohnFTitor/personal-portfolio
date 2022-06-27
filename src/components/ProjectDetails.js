@@ -30,7 +30,7 @@ const ProjectDetails = () => {
   return (
     <Box className="relative flex flex-col gap-8 xl:gap-16 items-center pt-5 w-full px-2 2xl:px-10">
       <Box className="relative flex w-full px-5 justify-center items-center">
-        <Link className="absolute left-2" data-aos="fade-right" to="/works">
+        <Link className="absolute left-2" data-aos="fade-right" to="/projects">
           <ArrowForwardIosIcon className="text-primary-500 dark:text-primary-50 -rotate-180 text-3xl" />
         </Link>
         <h1 className="text-3xl xl:text-4xl 2xl:text-5xl text-primary-1000 dark:text-white font-medium capitalize" data-aos="fade-up">{project.title}</h1>
