@@ -31,7 +31,7 @@ const ProjectDetails = () => {
     <Box className="relative flex flex-col gap-8 xl:gap-16 items-center pt-5 w-full px-2 2xl:px-10">
       <Box className="relative flex w-full px-5 justify-center items-center">
         <Link className="absolute left-2" data-aos="fade-right" to="/projects">
-          <ArrowForwardIosIcon className="text-primary-500 dark:text-primary-50 -rotate-180 text-3xl" />
+          <ArrowForwardIosIcon className="hover:scale-125 transition-transform text-primary-500 dark:text-primary-50 -rotate-180 text-3xl" />
         </Link>
         <h1 className="text-3xl xl:text-4xl 2xl:text-5xl text-primary-1000 dark:text-white font-medium capitalize" data-aos="fade-up">{project.title}</h1>
       </Box>
@@ -71,11 +71,11 @@ const ProjectDetails = () => {
         />
       </Box>
       <Box className="flex mx-auto xl:mx-0 gap-3 md:gap-20 max-w-md md:max-w-2xl justify-center flex-wrap mb-6 w-full px-2 xl:px-0">
-        <a href={project.live} target="_blank" rel="noreferrer" className="h-fit text-white dark:text-primary-1000 flex-1 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center justify-between py-1 xl:py-2 px-3 xl:px-5 uppercase font-semibold">
+        <a href={project.live} target="_blank" rel="noreferrer" className="hover:scale-105 transition-transform h-fit text-white dark:text-primary-1000 flex-1 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center justify-between py-1 xl:py-2 px-3 xl:px-5 uppercase font-semibold">
           <p className="text-lg xl:text-2xl">Live</p>
           <WebIcon className="text-3xl xl:text-5xl text-white dark:text-primary-1000" />
         </a>
-        <a href={project.source} target="_blank" rel="noreferrer" className="h-fit text-white dark:text-primary-1000 flex-1 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center justify-between py-1 xl:py-2 px-3 xl:px-5 uppercase font-semibold">
+        <a href={project.source} target="_blank" rel="noreferrer" className="hover:scale-105 transition-transform h-fit text-white dark:text-primary-1000 flex-1 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center justify-between py-1 xl:py-2 px-3 xl:px-5 uppercase font-semibold">
           <p className="text-lg xl:text-2xl">Source</p>
           <GitHubIcon className="text-3xl xl:text-5xl text-white dark:text-primary-1000" />
         </a>
