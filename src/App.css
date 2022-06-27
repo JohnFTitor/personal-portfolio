@@ -19,12 +19,12 @@ iframe {
   grid-template-rows: repeat(6, auto);
   grid-template-columns: 1fr;
   grid-template-areas:
-                      "title"
-                      "image"
-                      "tags"
-                      "description"
-                      "links"
-                      "buttons"
+    "title"
+    "image"
+    "tags"
+    "description"
+    "links"
+    "buttons";
 }
 
 .title {
@@ -55,9 +55,9 @@ iframe {
   grid-template-rows: repeat(3, auto);
   grid-template-columns: 1fr;
   grid-template-areas:
-                      "first-paragraph"
-                      "mobile-image"
-                      "extra-paragraphs"
+    "first-paragraph"
+    "mobile-image"
+    "extra-paragraphs";
 }
 
 .first-paragraph {
@@ -87,25 +87,24 @@ iframe {
     grid-template-rows: repeat(5, auto);
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-                        "title image"
-                        "description image"
-                        "tags tags"
-                        "links links"
-                        "buttons buttons";
+      "title image"
+      "description image"
+      "tags tags"
+      "links links"
+      "buttons buttons";
   }
 
   .info {
     grid-template-rows: repeat(2, auto);
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
-                        "first-paragraph mobile-image"
-                        "extra-paragraphs mobile-image";
+      "first-paragraph mobile-image"
+      "extra-paragraphs mobile-image";
   }
-
 }
 
 @media screen and (min-width: 1536px) {
   .project {
-    grid-template-columns: 1fr 1.5fr
+    grid-template-columns: 1fr 1.5fr;
   }
 }
