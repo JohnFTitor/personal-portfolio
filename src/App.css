@@ -15,12 +15,6 @@ iframe {
   transition: background-color 0.5s ease-in-out, color 0.2s ease-in;
 }
 
-@media screen and (min-width: 1024px) {
-  main {
-    padding-left: 288px;
-  }
-}
-
 .project {
   grid-template-rows: repeat(6, auto);
   grid-template-columns: 1fr;
@@ -57,6 +51,33 @@ iframe {
   grid-area: buttons;
 }
 
+.info {
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+                      "first-paragraph"
+                      "mobile-image"
+                      "extra-paragraphs"
+}
+
+.first-paragraph {
+  grid-area: first-paragraph;
+}
+
+.mobile-image {
+  grid-area: mobile-image;
+}
+
+.extra-paragraphs {
+  grid-area: extra-paragraphs;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding-left: 288px;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   main {
     padding-left: 320px;
@@ -72,6 +93,15 @@ iframe {
                         "links links"
                         "buttons buttons";
   }
+
+  .info {
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+                        "first-paragraph mobile-image"
+                        "extra-paragraphs mobile-image";
+  }
+
 }
 
 @media screen and (min-width: 1536px) {
