@@ -28,7 +28,7 @@ const Skill = (props) => {
   const { skill } = props;
 
   return (
-    <li className={`w-fit text-white dark:text-zinc-900 font-medium rounded-xl origin-center box-border p-1 px-5 m-3 ${getRandomStyles()}`}>{skill}</li>
+    <li className={`w-fit text-white xl:text-xl 2xl:text-2xl dark:text-zinc-900 font-medium rounded-xl origin-center box-border p-1 px-5 m-3 ${getRandomStyles()}`}>{skill}</li>
   );
 };
 

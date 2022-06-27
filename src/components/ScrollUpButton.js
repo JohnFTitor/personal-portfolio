@@ -12,7 +12,7 @@ const ScrollUpButton = () => {
 
   return (
     <IconButton onClick={scrollUp} className="bg-primary-500 dark:bg-primary-50 -rotate-90 p-1">
-      <ArrowForwardIosIcon className="text-white dark:text-primary-1000 text-3xl" />
+      <ArrowForwardIosIcon className="text-white dark:text-primary-1000 text-3xl xl:text-4xl" />
     </IconButton>
   );
 };
