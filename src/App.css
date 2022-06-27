@@ -21,8 +21,61 @@ iframe {
   }
 }
 
+.project {
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+                      "title"
+                      "image"
+                      "tags"
+                      "description"
+                      "links"
+                      "buttons"
+}
+
+.title {
+  grid-area: title;
+}
+
+.image {
+  grid-area: image;
+}
+
+.tags {
+  grid-area: tags;
+}
+
+.description {
+  grid-area: description;
+}
+
+.links {
+  grid-area: links;
+}
+
+.buttons {
+  grid-area: buttons;
+}
+
 @media screen and (min-width: 1280px) {
   main {
     padding-left: 320px;
+  }
+
+  .project {
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+                        "title image"
+                        "description image"
+                        "tags tags"
+                        "links links"
+                        "buttons buttons";
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .project {
+    grid-template-columns: 1fr 1.5fr
   }
 }
