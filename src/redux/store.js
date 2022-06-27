@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-import worksReducer from './worksReducer';
+import projectsReducer from './projectsReducer';
 import aboutReducer from './aboutReducer';
 
 const store = configureStore({
   reducer: {
-    projects: worksReducer,
+    projects: projectsReducer,
     about: aboutReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),

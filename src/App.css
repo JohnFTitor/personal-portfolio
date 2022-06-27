@@ -31,8 +31,44 @@ iframe {
   grid-area: title;
 }
 
-.image {
+.image-container {
   grid-area: image;
+}
+
+.image {
+  position: relative;
+}
+
+.image::before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.815);
+  transition: all 0.3s ease-in;
+}
+
+.image::after {
+  font-size: 60px;
+  width: 300px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  content: 'See more';
+  position: absolute;
+  transform-origin: center;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease-in 0.2s;
+}
+
+.image:hover::before {
+  width: 100%;
+}
+
+.image:hover::after {
+  opacity: 1;
 }
 
 .tags {
