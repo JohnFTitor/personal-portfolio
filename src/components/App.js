@@ -5,6 +5,7 @@ import HomePage from './Home';
 import WorkPage from './Work';
 import DetailsPage from './DetailsPage';
 import AboutPage from './AboutPage';
+import Contact from './Contact';
 
 const App = () => {
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -15,7 +16,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className={`app ${localStorage.theme}`}>
+      <div className={`relative app ${localStorage.theme}`}>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/projects" element={<WorkPage />} />
           <Route path="/projects/:id" element={<DetailsPage />} />
         </Routes>
+        <Contact />
       </div>
     </BrowserRouter>
   );

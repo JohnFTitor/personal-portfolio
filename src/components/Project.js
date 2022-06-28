@@ -77,7 +77,7 @@ const Project = (props) => {
           </IconButton>
           )}
         </Box>
-        <Link to={`/projects/${id}`} className="xl:hidden text-white dark:text-primary-1000 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center py-1 px-3 uppercase font-semibold text-lg no-underline"> See More </Link>
+        <Link to={`/projects/${id}`} className="xl:hidden text-white dark:text-primary-1000 bg-primary-1000 dark:bg-primary-50 flex gap-5 items-center py-1 px-3 mr-10 uppercase font-semibold text-lg no-underline"> See More </Link>
       </Box>
     </li>
   );
