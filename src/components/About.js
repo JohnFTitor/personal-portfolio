@@ -54,7 +54,7 @@ const About = () => {
       </Box>
       <Box className="w-full">
         <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-medium mb-5 text-primary-900 dark:text-primary-50" data-aos="fade-right">Learning</h2>
-        <ul className="flex flex-col gap-3 learning w-full" data-aos="flip-up">
+        <ul className="flex flex-col mx-auto gap-3 learning w-full max-w-3xl" data-aos="flip-up">
           {
             learning.map((thing) => (
               <Ability key={uuidv4()} skill={thing} />
