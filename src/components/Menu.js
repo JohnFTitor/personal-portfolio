@@ -34,7 +34,7 @@ const Menu = (props) => {
         <Link onClick={toggleMenu} to="/about" className="text-secondary-100 dark:text-secondary-800 text-4xl 2xl:text-menu 2xl:font-bold"> About </Link>
       </div>
       <svg className="absolute bottom-0 left-0 w-full h-fit" viewBox="0 0 280 111" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path className="fill-tertiary-500 dark:fill-tertiary-700" d="M-0.5 111.5V4L48.1207 25.7299C74.1294 37.3539 103.861 37.3333 129.854 25.673L166.089 9.41802C185.521 0.700905 207.228 -1.5846 228.05 2.8944L282 14.5V111.5H-0.5Z" />
+        <path className="fill-tertiary-500 dark:fill-zinc-700" d="M-0.5 111.5V4L48.1207 25.7299C74.1294 37.3539 103.861 37.3333 129.854 25.673L166.089 9.41802C185.521 0.700905 207.228 -1.5846 228.05 2.8944L282 14.5V111.5H-0.5Z" />
       </svg>
     </Box>
   );
