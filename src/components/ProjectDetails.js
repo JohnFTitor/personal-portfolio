@@ -11,9 +11,9 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ScrollUpButton from './ScrollUpButton';
 
 const ProjectDetails = () => {
-  const { projects } = useSelector((state) => state);
+  const { data } = useSelector((state) => state.projects);
   const { id } = useParams();
-  const project = projects?.filter((project) => project.id.toString() === id)[0];
+  const project = data?.filter((project) => project.id.toString() === id)[0];
 
   if (!project) {
     return <h1>Not Found</h1>;

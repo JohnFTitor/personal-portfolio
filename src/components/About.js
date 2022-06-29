@@ -10,7 +10,7 @@ import Ability from './Ability';
 import ScrollUpButton from './ScrollUpButton';
 
 const About = () => {
-  const { about } = useSelector((state) => state);
+  const { data } = useSelector((state) => state.about);
 
   const {
     profile,
@@ -20,7 +20,7 @@ const About = () => {
     likes,
     reading,
     writing,
-  } = about;
+  } = data;
 
   useEffect(() => {
     AOS.init({ duration: 500 });
