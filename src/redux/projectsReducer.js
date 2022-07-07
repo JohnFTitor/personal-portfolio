@@ -1,5 +1,5 @@
 import { createReducer, createAsyncThunk } from '@reduxjs/toolkit';
-import getProjects from '../util/APIHandling';
+import { getProjects } from '../util/APIHandling';
 
 // Define initial state
 const initialState = {
