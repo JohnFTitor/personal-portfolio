@@ -39,10 +39,10 @@ const Project = (props) => {
   };
 
   return (
-    <li className="grid project w-full gap-5 lg:gap-4 2xl:gap-7 pt-5 px-2 2xl:px-16 pb-8 snap-start h-full overflow-y-scroll lg:overflow-y-auto animate-slide_in">
+    <li className="grid project w-full gap-5 lg:gap-4 2xl:gap-5 pt-5 px-2 2xl:px-10 pb-8 snap-start h-full overflow-y-scroll lg:overflow-y-auto animate-slide_in">
       <h2 className="title w-full text-center xl:text-left text-4xl 2xl:text-5xl 2xl:mt-10 text-primary-1000 dark:text-white font-medium capitalize">{title}</h2>
-      <Link to={`/projects/${id}`} className="image-container mx-auto px-3 xl:px-1 xl:mt-5 2xl:mt-5 max-w-sm md:max-w-md lg:max-w-xs xl:max-w-none w-full xl:h-full xl:flex flex-col justify-center">
-        <Box className="w-full image">
+      <Link to={`/projects/${id}`} className="image-container mx-auto px-3 xl:px-1 2xl:px-10 xl:mt-5 max-w-sm md:max-w-md lg:max-w-xs xl:max-w-none w-full xl:h-full xl:flex flex-col justify-center">
+        <Box className="w-full image xl:px-9 flex justify-center">
           <img className="w-full" src={image} alt={title} />
         </Box>
       </Link>
