@@ -6,6 +6,7 @@ import WorkPage from './Work';
 import DetailsPage from './DetailsPage';
 import AboutPage from './AboutPage';
 import Contact from './Contact';
+import LoginPage from './LoginPage';
 
 const App = () => {
   if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<WorkPage />} />
           <Route path="/projects/:id" element={<DetailsPage />} />
+          <Route path="/admin/login" element={<LoginPage />} />
         </Routes>
         <Contact />
       </div>
