@@ -1,5 +1,5 @@
 import React from 'react';
-import animation from '../assets/gifs/coding.gif';
+import animation from '../assets/gifs/presentation.gif';
 import Page from './Page';
 import ProjectDetails from './ProjectDetails';
 

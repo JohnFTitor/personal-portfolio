@@ -33,7 +33,7 @@ const ProjectDetails = () => {
         <Link className="absolute left-2" data-aos="fade-right" to="/projects">
           <ArrowForwardIosIcon className="hover:scale-125 transition-transform text-primary-500 dark:text-primary-50 -rotate-180 text-3xl" />
         </Link>
-        <h1 className="text-3xl xl:text-4xl 2xl:text-5xl text-primary-1000 dark:text-white font-medium capitalize" data-aos="fade-up">{project.title}</h1>
+        <h1 className="text-center ml-5 text-3xl xl:text-4xl 2xl:text-5xl text-primary-1000 dark:text-white font-medium capitalize" data-aos="fade-up">{project.title}</h1>
       </Box>
       <Box className="px-3 w-full flex justify-center max-w-2xl xl:max-w-4xl" data-aos="fade-right">
         <img src={project.image} alt={project.title} />

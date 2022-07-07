@@ -49,8 +49,8 @@ iframe {
 }
 
 .image::after {
-  font-size: 60px;
-  width: 300px;
+  font-size: 40px;
+  width: 200px;
   color: rgb(255, 255, 255);
   font-weight: 400;
   content: 'See more';
@@ -136,6 +136,11 @@ iframe {
     grid-template-areas:
       "first-paragraph mobile-image"
       "extra-paragraphs mobile-image";
+  }
+
+  .image::after {
+    font-size: 60px;
+    width: 300px;
   }
 }
 
