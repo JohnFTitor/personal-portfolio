@@ -88,34 +88,34 @@ const CreateProject = ({ user }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} className="h-content-screen flex flex-col justify-center items-center gap-8">
+    <Box component="form" onSubmit={handleSubmit} className="min-h-content-screen flex flex-col justify-center items-center gap-8 p-10">
       {notification.open && (
         <span>{notification.message}</span>
       )}
-      <Input type="text" value={project.title} placeholder="title" name="title" onChange={handleChange} required />
-      <textarea placeholder="description" value={project.description} name="description" onChange={handleChange} required />
-      <div>
+      <Input type="text" value={project.title} placeholder="Title" name="title" onChange={handleChange} required className="w-2/3 text-lg text-primary-900 dark:text-primary-50" />
+      <textarea placeholder="Description" value={project.description} name="description" onChange={handleChange} className="w-2/3 h-128 text-lg border-b-2 border-primary-900 text-primary-900 dark:text-primary-50 bg-white dark:bg-zinc-800" required />
+      <div className="flex flex-col items-center w-1/3 gap-5">
         {project.tags.map((tagField, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <div key={index}>
-            <Input type="text" name="tag" value={tagField.tag} placeholder="tag" onChange={(e) => handleTagChange(e, index)} />
-            <Button onClick={() => { removeTag(index); }}> Remove </Button>
+          <div key={index} className="w-full text-lg flex gap-5 items-center mx-auto">
+            <Input type="text" name="tag" value={tagField.tag} placeholder="Tag" onChange={(e) => handleTagChange(e, index)} className="w-full text-primary-900 dark:text-primary-50" />
+            <Button variant="contained" onClick={() => { removeTag(index); }} className="text-red-900 hover:bg-red-900 hover:text-red-50 dark:text-red-50 dark:hover:bg-red-50 dark:hover:text-red-900"> Remove </Button>
           </div>
         ))}
-        <Button onClick={addTag}> Add Tag </Button>
+        <Button onClick={addTag} className="text-primary-900 dark:text-primary-50"> Add Tag </Button>
       </div>
-      <Input type="text" value={project.live} placeholder="live" name="live" onChange={handleChange} required />
-      <Input type="text" value={project.source} placeholder="source" name="source" onChange={handleChange} required />
-      <Input type="text" value={project.demo} placeholder="demo" name="demo" onChange={handleChange} required />
-      <InputLabel htmlFor="desktop_image">
+      <Input className="w-2/3 text-lg text-primary-900 dark:text-primary-50" type="text" value={project.live} placeholder="Live" name="live" onChange={handleChange} required />
+      <Input className="w-2/3 text-lg text-primary-900 dark:text-primary-50" type="text" value={project.source} placeholder="Source" name="source" onChange={handleChange} required />
+      <Input className="w-2/3 text-lg text-primary-900 dark:text-primary-50" type="text" value={project.demo} placeholder="Demo" name="demo" onChange={handleChange} required />
+      <InputLabel htmlFor="desktop_image" className="w-2/3 text-lg text-primary-900 dark:text-primary-50 flex flex-col items-center">
         Desktop Image
-        <Input id="desktop_image" ref={desktopImage} type="file" value={project.desktop_image} name="desktop_image" required />
+        <Input id="desktop_image" ref={desktopImage} type="file" value={project.desktop_image} name="desktop_image" className="w-full text-primary-900 dark:text-primary-50" required />
       </InputLabel>
-      <InputLabel htmlFor="mobile_image">
+      <InputLabel htmlFor="mobile_image" className="w-2/3 text-lg text-primary-900 dark:text-primary-50 flex flex-col items-center">
         Mobile Image
-        <Input id="mobile_image" ref={mobileImage} type="file" value={project.mobile_image} name="mobile_image" required />
+        <Input id="mobile_image" ref={mobileImage} type="file" value={project.mobile_image} name="mobile_image" className="w-full text-primary-900 dark:text-primary-50" required />
       </InputLabel>
-      <Button type="submit" variant="contained" className="text-primary-900"> Create Project </Button>
+      <Button type="submit" variant="contained" className="text-primary-900 hover:bg-primary-900 hover:text-primary-50 dark:bg-zinc-900 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900"> Create Project </Button>
     </Box>
   );
 };
