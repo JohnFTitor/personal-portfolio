@@ -4,17 +4,17 @@ import { useSelector } from 'react-redux';
 import Project from './Project';
 
 const Projects = () => {
-  const { projects } = useSelector((state) => state);
+  const { data } = useSelector((state) => state.projects);
 
   return (
     <Box className="w-full h-full overflow-hidden">
       <ul id="projects" className="h-content-screen snap-y snap-mandatory snap-always overflow-y-scroll">
-        {projects.map((project, index) => (
+        {data.map((project, index) => (
           <Project
             key={project.id}
             project={project}
             first={index === 0}
-            last={index === (projects.length - 1)}
+            last={index === (data.length - 1)}
           />
         ))}
       </ul>

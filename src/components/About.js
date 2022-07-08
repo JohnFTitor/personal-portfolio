@@ -10,7 +10,7 @@ import Ability from './Ability';
 import ScrollUpButton from './ScrollUpButton';
 
 const About = () => {
-  const { about } = useSelector((state) => state);
+  const { data } = useSelector((state) => state.about);
 
   const {
     profile,
@@ -20,7 +20,7 @@ const About = () => {
     likes,
     reading,
     writing,
-  } = about;
+  } = data;
 
   useEffect(() => {
     AOS.init({ duration: 500 });
@@ -30,7 +30,7 @@ const About = () => {
   return (
     <Box className="flex flex-col gap-10 2xl:gap-16 items-center text-primary-1000 dark:text-white pt-5 px-5 2xl:px-10 pb-5">
       <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-medium" data-aos="fade-right">About Me</h1>
-      <Box className="flex flex-col xl:flex-row-reverse items-center w-full xl:items-start gap-10">
+      <Box className="flex flex-col xl:flex-row-reverse items-center w-full gap-10">
         <Box className="flex-1 flex justify-center px-5" data-aos="fade-left">
           <img src={profile} alt="profile" />
         </Box>
@@ -68,7 +68,8 @@ const About = () => {
       <Box className="w-full flex flex-col xl:flex-row gap-10">
         <Box className="flex-1 w-full">
           <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-medium mb-5 xl:mb-10 text-primary-900 dark:text-primary-50" data-aos="fade-right">Likes</h2>
-          <Box className="flex flex-col gap-5">
+          <img src="https://novatorem-johnftitor.vercel.app/api/spotify" alt="spotify music" className="w-full max-w-lg mx-auto mb-5" data-aos="fade" />
+          <Box className="flex flex-col gap-3">
             {
               likes.split('\n').map((paragraph) => (
                 <p key={uuidv4()} className="text-center xl:text-left text-lg 2xl:text-xl" data-aos="fade-up">{paragraph}</p>
@@ -79,10 +80,10 @@ const About = () => {
         <Box className="flex-1 w-full">
           <h2 className="text-3xl xl:text-4xl 2xl:text-5xl font-medium mb-10 text-primary-900 dark:text-primary-50 w-full" data-aos="fade-right">Hobbies</h2>
           <Box className="flex flex-col items-center xl:items-start gap-10">
-            <Box className="max-w-sm 2xl:max-w-md bg-primary-1000 dark:bg-primary-50 p-7 text-2xl 2xl:text-3xl font-medium text-white dark:text-primary-1000" data-aos="flip-up">
+            <Box className="w-full max-w-sm 2xl:max-w-none bg-primary-1000 dark:bg-primary-50 p-7 2xl:p-12 text-2xl 2xl:text-3xl font-medium text-white dark:text-primary-1000" data-aos="flip-up">
               <p>{`Currently Reading: ${reading}`}</p>
             </Box>
-            <Box className="max-w-sm 2xl:max-w-md bg-primary-1000 dark:bg-primary-50 p-7 text-2xl 2xl:text-3xl font-medium text-white dark:text-primary-1000 mb-10" data-aos="flip-down">
+            <Box className="w-full max-w-sm 2xl:max-w-none bg-primary-1000 dark:bg-primary-50 p-7 2xl:p-12 text-2xl 2xl:text-3xl font-medium text-white dark:text-primary-1000 mb-10" data-aos="flip-down">
               <p>{`Currently Writing: ${writing}`}</p>
             </Box>
           </Box>

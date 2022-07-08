@@ -54,7 +54,7 @@ module.exports = {
           '100%': { transform: 'translateY(0%)' },
         },
         slide_up_half: {
-          '0%': { transform: 'translateY(150%)' },
+          '0%': { transform: 'translateY(50%)' },
           '100%': { transform: 'translateY(0%)' },
         },
       },

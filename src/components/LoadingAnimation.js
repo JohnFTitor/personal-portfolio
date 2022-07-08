@@ -29,7 +29,7 @@ const LoadingAnimation = (props) => {
 
   return (
     <Box className="flex h-content-screen flex-col items-center justify-center">
-      <img src={animation} alt="Loading Animation" className="container max-w-md xl:max-w-lg 2xl:max-w-2xl px-5 animate-slow_fade" />
+      <img src={animation} alt="Loading Animation" className="container max-w-xs xl:max-w-sm 2xl:max-w-md px-5 animate-slow_fade rounded-full" />
       <Box className="mt-8 flex justify-center container px-5">
         {circles}
       </Box>

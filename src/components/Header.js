@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import VolumeMuteIcon from '@mui/icons-material/VolumeMute';
 import { IconButton, Box } from '@mui/material';
 import Menu from './Menu';
 import useWindowSize from '../util/useWindowSize';
@@ -60,9 +59,6 @@ const Header = () => {
         <Box className={`${classes.color} h-1 w-8 origin-top-left transition-all ${classes.rotateDown}`} />
         <Box className={`bg-primary-1000 h-1 w-8 transition-all ${classes.opacity}`} />
         <Box className={`${classes.color} h-1 w-8 origin-bottom-left transition-all ${classes.rotateUp}`} />
-      </IconButton>
-      <IconButton className="border-4 border-primary-1000 border-solid h-fit p-0 animate-slide_down dark:border-primary-50">
-        <VolumeMuteIcon fontSize="large" className="text-primary-1000 text-4xl dark:text-primary-50" />
       </IconButton>
       <Menu translation={translation} toggleMenu={screen.width >= 1024 ? null : toggleMenu} />
     </header>

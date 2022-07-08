@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import animation from '../assets/gifs/presentation.gif';
-import { fetchProjects } from '../redux/projectsReducer';
 import Page from './Page';
-import ProjectDetails from './ProjectDetails';
+import animation from '../assets/gifs/presentation.gif';
+import DeleteProjectsProtected from './DeleteProjectsProtected';
+import { fetchProjects } from '../redux/projectsReducer';
 
-const DetailsPage = () => {
+const DeleteProjectsPage = () => {
   const { status } = useSelector((state) => state.projects);
   const dispatch = useDispatch();
 
@@ -16,8 +16,8 @@ const DetailsPage = () => {
   }, []);
 
   return (
-    <Page element={<ProjectDetails />} animation={animation} condition={status === 'completed'} />
+    <Page element={<DeleteProjectsProtected />} animation={animation} condition={status === 'completed'} />
   );
 };
 
-export default DetailsPage;
+export default DeleteProjectsPage;
