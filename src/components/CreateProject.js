@@ -22,39 +22,23 @@ const CreateProject = ({ user }) => {
     source: '',
     demo: '',
   });
-  const [notification, setNotification] = useState({
-    open: false,
-    message: '',
-  });
 
   const handleChange = (e) => {
     const newProjectData = { ...project };
     newProjectData[e.target.name] = e.target.value;
     setProjectData(newProjectData);
-    setNotification({
-      open: false,
-      message: '',
-    });
   };
 
   const addTag = () => {
     const newProjectData = { ...project };
     newProjectData.tags.push({ tag: '' });
     setProjectData(newProjectData);
-    setNotification({
-      open: false,
-      message: '',
-    });
   };
 
   const removeTag = (index) => {
     const newProjectData = { ...project };
     newProjectData.tags.splice(index, 1);
     setProjectData(newProjectData);
-    setNotification({
-      open: false,
-      message: '',
-    });
   };
 
   const handleTagChange = (e, index) => {
@@ -89,9 +73,7 @@ const CreateProject = ({ user }) => {
 
   return (
     <Box component="form" onSubmit={handleSubmit} className="min-h-content-screen flex flex-col justify-center items-center gap-8 p-10">
-      {notification.open && (
-        <span>{notification.message}</span>
-      )}
+      <h1 className="text-3xl text-primary-900 dark:text-primary-50"> Create New Project </h1>
       <Input type="text" value={project.title} placeholder="Title" name="title" onChange={handleChange} required className="w-2/3 text-lg text-primary-900 dark:text-primary-50" />
       <textarea placeholder="Description" value={project.description} name="description" onChange={handleChange} className="w-2/3 h-128 text-lg border-b-2 border-primary-900 text-primary-900 dark:text-primary-50 bg-white dark:bg-zinc-800" required />
       <div className="flex flex-col items-center w-1/3 gap-5">
