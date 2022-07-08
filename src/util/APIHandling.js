@@ -37,4 +37,23 @@ const deleteProject = async (id, token) => {
   return { status: response.status, data: responseFormated };
 };
 
-export { getProjects, loginUser, deleteProject };
+const createProject = async (data, token) => {
+  const response = await fetch(`${baseURL}/projects`, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+    body: JSON.stringify(data),
+  });
+  const responseFormated = await response.json();
+  return { status: response.status, project: responseFormated };
+};
+
+export {
+  getProjects,
+  loginUser,
+  deleteProject,
+  createProject,
+};

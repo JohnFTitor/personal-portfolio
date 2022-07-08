@@ -1,5 +1,5 @@
 import { createReducer, createAsyncThunk } from '@reduxjs/toolkit';
-import { deleteProject, getProjects } from '../util/APIHandling';
+import { createProject, deleteProject, getProjects } from '../util/APIHandling';
 
 // Define initial state
 const initialState = {
@@ -23,11 +23,22 @@ const removeProject = createAsyncThunk(
     if (response.status === 200) {
       return data.id;
     }
-    return null;
+    return Promise.reject(new Error(JSON.stringify(response.data)));
   },
 );
 
-export { fetchProjects, removeProject };
+const addProject = createAsyncThunk(
+  'projects/add-project',
+  async (data) => {
+    const response = await createProject(data.body, data.token);
+    if (response.status === 200) {
+      return response.project.data.attributes;
+    }
+    return Promise.reject(new Error(JSON.stringify(response.project)));
+  },
+);
+
+export { fetchProjects, removeProject, addProject };
 
 // Define Reducer
 const projectsReducer = createReducer(initialState, (builder) => {
