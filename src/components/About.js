@@ -32,7 +32,7 @@ const About = () => {
       <h1 className="text-3xl xl:text-4xl 2xl:text-5xl font-medium" data-aos="fade-right">About Me</h1>
       <Box className="flex flex-col xl:flex-row-reverse items-center w-full gap-10">
         <Box className="flex-1 flex justify-center px-5" data-aos="fade-left">
-          <img src={profile} alt="profile" />
+          <img src={profile} alt="profile" className="max-w-lg w-full" />
         </Box>
         <Box className="flex-1 flex flex-col gap-5">
           {
