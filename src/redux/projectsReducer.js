@@ -31,7 +31,7 @@ const addProject = createAsyncThunk(
   'projects/add-project',
   async (data) => {
     const response = await createProject(data.body, data.token);
-    if (response.status === 200) {
+    if (response.status === 201) {
       return response.project.data.attributes;
     }
     return Promise.reject(new Error(JSON.stringify(response.project)));
@@ -52,6 +52,11 @@ const projectsReducer = createReducer(initialState, (builder) => {
     .addCase(removeProject.fulfilled, (state, action) => {
       const newState = { ...state };
       newState.data = state.data.filter((project) => project.id !== action.payload);
+      return newState;
+    })
+    .addCase(addProject.fulfilled, (state, action) => {
+      const newState = { ...state };
+      newState.data = [action.payload, ...state.data];
       return newState;
     });
 });

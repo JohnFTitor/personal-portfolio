@@ -37,15 +37,14 @@ const deleteProject = async (id, token) => {
   return { status: response.status, data: responseFormated };
 };
 
-const createProject = async (data, token) => {
+const createProject = async (formData, token) => {
   const response = await fetch(`${baseURL}/projects`, {
     method: 'POST',
     mode: 'cors',
     headers: {
-      'Content-Type': 'application/json',
       Authorization: token,
     },
-    body: JSON.stringify(data),
+    body: formData,
   });
   const responseFormated = await response.json();
   return { status: response.status, project: responseFormated };
