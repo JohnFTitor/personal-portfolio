@@ -24,4 +24,17 @@ const loginUser = async (data) => {
   return { status: response.status, data: responseFormated };
 };
 
-export { getProjects, loginUser };
+const deleteProject = async (id, token) => {
+  const response = await fetch(`${baseURL}/projects/${id}`, {
+    method: 'DELETE',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+  });
+  const responseFormated = await response.json();
+  return { status: response.status, data: responseFormated };
+};
+
+export { getProjects, loginUser, deleteProject };
