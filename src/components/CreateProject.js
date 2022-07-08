@@ -4,9 +4,12 @@ import {
   Input,
   InputLabel,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addProject } from '../redux/projectsReducer';
 
-const CreateProject = () => {
+const CreateProject = ({ user }) => {
   const [project, setProjectData] = useState({
     title: '',
     description: '',
@@ -60,8 +63,32 @@ const CreateProject = () => {
     setProjectData(newProjectData);
   };
 
+  const desktopImage = useRef(null);
+  const mobileImage = useRef(null);
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    const tags = project.tags.map((instance) => instance.tag);
+
+    formData.append('title', project.title);
+    formData.append('description', project.description);
+    formData.append('tags', tags);
+    formData.append('live', project.live);
+    formData.append('source', project.source);
+    formData.append('demo', project.demo);
+    formData.append('desktop_image', desktopImage.current.firstChild.files[0]);
+    formData.append('mobile_image', mobileImage.current.firstChild.files[0]);
+
+    dispatch(addProject({
+      body: formData,
+      token: user.token,
+    }));
+  };
+
   return (
-    <Box type="form">
+    <Box component="form" onSubmit={handleSubmit} className="h-content-screen flex flex-col justify-center items-center gap-8">
       {notification.open && (
         <span>{notification.message}</span>
       )}
@@ -82,14 +109,22 @@ const CreateProject = () => {
       <Input type="text" value={project.demo} placeholder="demo" name="demo" onChange={handleChange} required />
       <InputLabel htmlFor="desktop_image">
         Desktop Image
-        <Input id="desktop_image" type="file" value={project.desktop_image} name="desktop_image" required />
+        <Input id="desktop_image" ref={desktopImage} type="file" value={project.desktop_image} name="desktop_image" required />
       </InputLabel>
       <InputLabel htmlFor="mobile_image">
         Mobile Image
-        <Input id="mobile_image" type="file" value={project.mobile_image} name="mobile_image" required />
+        <Input id="mobile_image" ref={mobileImage} type="file" value={project.mobile_image} name="mobile_image" required />
       </InputLabel>
+      <Button type="submit" variant="contained" className="text-primary-900"> Create Project </Button>
     </Box>
   );
+};
+
+CreateProject.propTypes = {
+  user: PropTypes.shape({
+    token: PropTypes.string.isRequired,
+    role: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default CreateProject;
