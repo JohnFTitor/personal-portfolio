@@ -1,19 +1,13 @@
 import { Button } from '@mui/material';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchProjects, removeProject } from '../redux/projectsReducer';
+import { removeProject } from '../redux/projectsReducer';
 
 const DeleteProjects = ({ user }) => {
-  const { status, data } = useSelector((state) => state.projects);
+  const { data } = useSelector((state) => state.projects);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (status === 'iddle') {
-      dispatch(fetchProjects());
-    }
-  }, []);
 
   const destroyProject = async (id) => {
     dispatch(removeProject({

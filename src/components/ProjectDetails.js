@@ -16,7 +16,7 @@ const ProjectDetails = () => {
   const project = data?.filter((project) => project.id.toString() === id)[0];
 
   if (!project) {
-    return <h1>Not Found</h1>;
+    return <h1 className="h-content-screen flex flex-col justify-center items-center text-3xl text-primary-900 dark:text-primary-50">404 Not Found</h1>;
   }
 
   const paragraphs = project.description.split('\n');

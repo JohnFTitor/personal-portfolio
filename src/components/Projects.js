@@ -1,18 +1,10 @@
 import { Box } from '@mui/material';
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Project from './Project';
-import { fetchProjects } from '../redux/projectsReducer';
 
 const Projects = () => {
-  const { data, status } = useSelector((state) => state.projects);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (status === 'iddle') {
-      dispatch(fetchProjects());
-    }
-  }, []);
+  const { data } = useSelector((state) => state.projects);
 
   return (
     <Box className="w-full h-full overflow-hidden">
