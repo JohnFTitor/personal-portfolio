@@ -12,7 +12,7 @@ const Projects = () => {
     if (status === 'iddle') {
       dispatch(fetchProjects());
     }
-  });
+  }, []);
 
   return (
     <Box className="w-full h-full overflow-hidden">

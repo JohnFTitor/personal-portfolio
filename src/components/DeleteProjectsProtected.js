@@ -6,7 +6,7 @@ const DeleteProjectsProtected = () => {
   const user = JSON.parse(localStorage.getItem('user'));
 
   return (
-    <ProtectedRoute isAllowed={!!user} element={<DeleteProjects />} />
+    <ProtectedRoute isAllowed={!!user} element={<DeleteProjects user={user} />} />
   );
 };
 

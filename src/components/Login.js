@@ -20,6 +20,11 @@ const Login = () => {
         open: true,
         message: response.data.error,
       });
+    } else if (response.status === 200) {
+      setNotification({
+        open: true,
+        message: 'Welcome, Master',
+      });
     }
   };
 
