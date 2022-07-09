@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000';
+const baseURL = 'https://johnftitor-portfolio-api.herokuapp.com/';
 
 const getProjects = async () => {
   const response = await fetch(`${baseURL}/projects`);
