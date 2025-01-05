@@ -4,7 +4,7 @@ import LoadingAnimation from './LoadingAnimation';
 interface PageProps {
   element: React.ReactElement;
   animation: string;
-  condition: boolean;
+  condition?: boolean;
 }
 
 const Page = (props: PageProps) => {

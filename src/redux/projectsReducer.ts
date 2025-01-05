@@ -1,10 +1,28 @@
 import { createReducer, createAsyncThunk } from '@reduxjs/toolkit';
 import { createProject, deleteProject, getProjects } from '../util/APIHandling';
+import { Status, Project } from './types';
+
+export interface ProjectState {
+  data: Project[];
+  status: Status;
+}
+
+export interface AuthenticatedRequest {
+  token: string;
+}
+
+export interface DeleteProjectBody extends AuthenticatedRequest {
+  id: number;
+}
+
+export interface AddProjectBody extends AuthenticatedRequest {
+  body: Pick<Project, 'title' | 'image' | 'description' | 'tags' | 'live' | 'source'>;
+}
 
 // Define initial state
-const initialState = {
+const initialState: ProjectState = {
   data: [],
-  status: 'iddle',
+  status: 'idle',
 };
 
 // Define Action
@@ -18,7 +36,7 @@ const fetchProjects = createAsyncThunk(
 
 const removeProject = createAsyncThunk(
   'projects/delete-project',
-  async (data) => {
+  async (data: DeleteProjectBody) => {
     const response = await deleteProject(data.id, data.token);
     if (response.status === 200) {
       return data.id;
@@ -29,7 +47,7 @@ const removeProject = createAsyncThunk(
 
 const addProject = createAsyncThunk(
   'projects/add-project',
-  async (data) => {
+  async (data: AddProjectBody) => {
     const response = await createProject(data.body, data.token);
     if (response.status === 201) {
       return response.project.data.attributes;
@@ -41,7 +59,7 @@ const addProject = createAsyncThunk(
 export { fetchProjects, removeProject, addProject };
 
 // Define Reducer
-const projectsReducer = createReducer(initialState, (builder) => {
+const projectsReducer = createReducer<ProjectState>(initialState, (builder) => {
   builder
     .addCase(fetchProjects.fulfilled, (state, action) => {
       const newState = { ...state };

@@ -6,17 +6,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { v4 as uuidv4 } from 'uuid';
 import useWindowSize from '../util/useWindowSize';
+import { Project } from '../redux/types';
 
 interface ProjectProps {
-  project: {
-    id: number;
-    title: string;
-    image: string;
-    tags: unknown[];
-    description: string;
-    live: string;
-    source: string;
-  };
+  project: Project;
   first: boolean;
   last: boolean;
 }

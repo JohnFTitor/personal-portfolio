@@ -1,9 +1,22 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 import profile from '../assets/me.jpg';
+import { Status } from './types';
+
+export interface AboutState {
+  data: {
+    profile: string;
+    aboutMe: string;
+    skills: string[];
+    learning: string[];
+    likes: string;
+    reading: string;
+    writing: string;
+  };
+  status: Status;
+}
 
 // Define Initial State
-
-const initialState = {
+const initialState: AboutState = {
   data: {
     profile,
     aboutMe: `Hi! I'm Andrés, a Full-stack developer who enjoys learning new skills and facing challenges. When I'm not coding, you can find me trying new things, letting myself be overwhelmed by something interesting, or just playing games (truth be told!).
@@ -17,17 +30,15 @@ const initialState = {
     reading: 'The Art of War',
     writing: 'Patrick Hendless',
   },
-  status: 'iddle',
+  status: 'idle',
 };
 
 // Define action
-
 const getAbout = createAction('GET_ABOUT');
 
 export { getAbout };
 
 // Define Reducer
-
 const aboutReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(getAbout, (state) => state);
