@@ -40,13 +40,9 @@ const Menu = (props) => {
   );
 };
 
-Menu.defaultProps = {
-  toggleMenu: null,
-};
-
 Menu.propTypes = {
   translation: PropTypes.string.isRequired,
-  toggleMenu: PropTypes.func,
+  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default Menu;

@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types';
 import { Navigate } from 'react-router-dom';
 
 const ProtectedRoute = ({
-  redirectPath, isAllowed, element,
+  redirectPath = '/admin/login', isAllowed, element,
 }) => {
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;
@@ -10,12 +10,8 @@ const ProtectedRoute = ({
   return element;
 };
 
-ProtectedRoute.defaultProps = {
-  redirectPath: '/admin/login',
-};
-
 ProtectedRoute.propTypes = {
-  redirectPath: PropTypes.string,
+  redirectPath: PropTypes.string.isRequired,
   isAllowed: PropTypes.bool.isRequired,
   element: PropTypes.element.isRequired,
 };

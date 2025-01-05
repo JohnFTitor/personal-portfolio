@@ -4,7 +4,7 @@ import LoadingAnimation from './LoadingAnimation';
 
 const Page = (props) => {
   const [loaded, setLoaded] = useState(false);
-  const { element, animation, condition } = props;
+  const { element, animation, condition = true } = props;
 
   useEffect(() => {
     setTimeout(() => {
@@ -19,14 +19,10 @@ const Page = (props) => {
   );
 };
 
-Page.defaultProps = {
-  condition: true,
-};
-
 Page.propTypes = {
   element: PropTypes.element.isRequired,
   animation: PropTypes.string.isRequired,
-  condition: PropTypes.bool,
+  condition: PropTypes.bool.isRequired,
 };
 
 export default Page;
