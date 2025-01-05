@@ -5,11 +5,19 @@ import {
   InputLabel,
 } from '@mui/material';
 import React, { useState, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addProject } from '../redux/projectsReducer';
 
-const CreateProject = ({ user }) => {
+interface CreateProjectProps {
+  user: {
+    token: string;
+    role: string;
+  };
+}
+
+const CreateProject = ({
+  user
+}: CreateProjectProps) => {
   const [project, setProjectData] = useState({
     title: '',
     description: '',
@@ -72,17 +80,17 @@ const CreateProject = ({ user }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} className="min-h-content-screen flex flex-col justify-center items-center gap-8 p-10">
+    (<Box component="form" onSubmit={handleSubmit} className="min-h-content-screen flex flex-col justify-center items-center gap-8 p-10">
       <h1 className="text-3xl text-primary-900 dark:text-primary-50"> Create New Project </h1>
       <Input type="text" value={project.title} placeholder="Title" name="title" onChange={handleChange} required className="w-2/3 text-lg text-primary-900 dark:text-primary-50" />
       <textarea placeholder="Description" value={project.description} name="description" onChange={handleChange} className="w-2/3 h-128 text-lg border-b-2 border-primary-900 text-primary-900 dark:text-primary-50 bg-white dark:bg-zinc-800" required />
       <div className="flex flex-col items-center w-1/3 gap-5">
         {project.tags.map((tagField, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <div key={index} className="w-full text-lg flex gap-5 items-center mx-auto">
+          (<div key={index} className="w-full text-lg flex gap-5 items-center mx-auto">
             <Input type="text" name="tag" value={tagField.tag} placeholder="Tag" onChange={(e) => handleTagChange(e, index)} className="w-full text-primary-900 dark:text-primary-50" />
             <Button variant="contained" onClick={() => { removeTag(index); }} className="text-red-900 hover:bg-red-900 hover:text-red-50 dark:text-red-50 dark:hover:bg-red-50 dark:hover:text-red-900"> Remove </Button>
-          </div>
+          </div>)
         ))}
         <Button onClick={addTag} className="text-primary-900 dark:text-primary-50"> Add Tag </Button>
       </div>
@@ -98,15 +106,8 @@ const CreateProject = ({ user }) => {
         <Input id="mobile_image" ref={mobileImage} type="file" value={project.mobile_image} name="mobile_image" className="w-full text-primary-900 dark:text-primary-50" required />
       </InputLabel>
       <Button type="submit" variant="contained" className="text-primary-900 hover:bg-primary-900 hover:text-primary-50 dark:bg-zinc-900 dark:text-primary-50 dark:hover:bg-primary-50 dark:hover:text-primary-900"> Create Project </Button>
-    </Box>
+    </Box>)
   );
-};
-
-CreateProject.propTypes = {
-  user: PropTypes.shape({
-    token: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default CreateProject;

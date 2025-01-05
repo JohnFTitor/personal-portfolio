@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
 
-const Menu = (props) => {
+interface MenuProps {
+  translation: string;
+  toggleMenu(...args: unknown[]): unknown;
+}
+
+const Menu = (props: MenuProps) => {
   const { translation, toggleMenu } = props;
   const app = document.querySelector('.app');
 
@@ -38,11 +42,6 @@ const Menu = (props) => {
       </svg>
     </Box>
   );
-};
-
-Menu.propTypes = {
-  translation: PropTypes.string.isRequired,
-  toggleMenu: PropTypes.func.isRequired,
 };
 
 export default Menu;

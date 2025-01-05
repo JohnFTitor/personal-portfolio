@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import LoadingAnimation from './LoadingAnimation';
 
-const Page = (props) => {
+interface PageProps {
+  element: React.ReactElement;
+  animation: string;
+  condition: boolean;
+}
+
+const Page = (props: PageProps) => {
   const [loaded, setLoaded] = useState(false);
   const { element, animation, condition = true } = props;
 
@@ -17,12 +22,6 @@ const Page = (props) => {
       { (loaded && condition) ? element : <LoadingAnimation animation={animation} />}
     </main>
   );
-};
-
-Page.propTypes = {
-  element: PropTypes.element.isRequired,
-  animation: PropTypes.string.isRequired,
-  condition: PropTypes.bool.isRequired,
 };
 
 export default Page;

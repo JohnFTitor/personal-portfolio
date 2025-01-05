@@ -1,10 +1,18 @@
 import { Button } from '@mui/material';
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import { removeProject } from '../redux/projectsReducer';
 
-const DeleteProjects = ({ user }) => {
+interface DeleteProjectsProps {
+  user: {
+    token: string;
+    role: string;
+  };
+}
+
+const DeleteProjects = ({
+  user
+}: DeleteProjectsProps) => {
   const { data } = useSelector((state) => state.projects);
 
   const dispatch = useDispatch();
@@ -31,13 +39,6 @@ const DeleteProjects = ({ user }) => {
       ))}
     </ul>
   );
-};
-
-DeleteProjects.propTypes = {
-  user: PropTypes.shape({
-    token: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
-  }).isRequired,
 };
 
 export default DeleteProjects;

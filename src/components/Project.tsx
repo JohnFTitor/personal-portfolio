@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Box, IconButton } from '@mui/material';
 import WebIcon from '@mui/icons-material/Web';
@@ -8,7 +7,21 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { v4 as uuidv4 } from 'uuid';
 import useWindowSize from '../util/useWindowSize';
 
-const Project = (props) => {
+interface ProjectProps {
+  project: {
+    id: number;
+    title: string;
+    image: string;
+    tags: unknown[];
+    description: string;
+    live: string;
+    source: string;
+  };
+  first: boolean;
+  last: boolean;
+}
+
+const Project = (props: ProjectProps) => {
   const { project, first, last } = props;
 
   const {
@@ -81,20 +94,6 @@ const Project = (props) => {
       </Box>
     </li>
   );
-};
-
-Project.propTypes = {
-  project: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    tags: PropTypes.arrayOf(String).isRequired,
-    description: PropTypes.string.isRequired,
-    live: PropTypes.string.isRequired,
-    source: PropTypes.string.isRequired,
-  }).isRequired,
-  first: PropTypes.bool.isRequired,
-  last: PropTypes.bool.isRequired,
 };
 
 export default Project;

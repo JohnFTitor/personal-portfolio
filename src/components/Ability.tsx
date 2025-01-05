@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import useWindowSize from '../util/useWindowSize';
 
-const Ability = (props) => {
+interface AbilityProps {
+  skill: string;
+}
+
+const Ability = (props: AbilityProps) => {
   const { skill } = props;
 
   const windowSize = useWindowSize();
@@ -41,10 +44,6 @@ const Ability = (props) => {
       {skill}
     </li>
   );
-};
-
-Ability.propTypes = {
-  skill: PropTypes.string.isRequired,
 };
 
 export default Ability;

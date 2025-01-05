@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Box } from '@mui/material';
 
-const LoadingAnimation = (props) => {
+interface LoadingAnimationProps {
+  animation: string;
+}
+
+const LoadingAnimation = (props: LoadingAnimationProps) => {
   const [circles, setCircles] = useState([
     <Box key={0} className="pr-3">
       <CircleIcon className="animate-fade text-primary-800 dark:text-primary-100" />
@@ -35,10 +38,6 @@ const LoadingAnimation = (props) => {
       </Box>
     </Box>
   );
-};
-
-LoadingAnimation.propTypes = {
-  animation: PropTypes.string.isRequired,
 };
 
 export default LoadingAnimation;
