@@ -31,14 +31,14 @@ const Project = (props: ProjectProps) => {
 
   const scrollDown = () => {
     parent?.scroll({
-      top: parent?.scrollTop + (size.height ?? 0),
+      top: parent?.scrollTop + size.height,
       behavior: 'smooth',
     });
   };
 
   const scrollUp = () => {
     parent?.scroll({
-      top: parent?.scrollTop - (size.height ?? 0),
+      top: parent?.scrollTop - size.height,
       behavior: 'smooth',
     });
   };

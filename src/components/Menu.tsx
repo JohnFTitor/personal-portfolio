@@ -15,12 +15,6 @@ const Menu = (props: MenuProps) => {
     localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
   };
 
-  const handleClick = () => {
-    console.log(toggleMenu);
-
-    toggleMenu?.();
-  };
-
   return (
     <Box className={`absolute top-0 left-0 h-screen w-screen overflow-auto max-w-72 2xl:max-w-xs z-40 bg-secondary-1000 dark:bg-secondary-100 rounded-r-large p-8 pt-12 flex flex-col items-center transition-transform ${translation}`}>
       <Box onClick={toggleDarkMode} className="w-52 h-52 xl:w-56 xl:h-56 fill-primary-1000 dark:fill-secondary-50 dark:hover:fill-secondary-50 hover:fill-primary-1000 bg-secondary-400 dark:bg-secondary-800 dark:hover:bg-zinc-800 hover:bg-tertiary-50 rounded-full cursor-pointer flex justify-center items-center">

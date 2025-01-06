@@ -45,7 +45,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (screen.width ?? 0 >= 1024) {
+    if (screen.width >= 1024) {
       showMenu();
     } else {
       hideMenu();
@@ -67,7 +67,7 @@ const Header = () => {
         <Box className={`bg-primary-1000 h-1 w-8 transition-all ${classes.opacity}`} />
         <Box className={`${classes.color} h-1 w-8 origin-bottom-left transition-all ${classes.rotateUp}`} />
       </IconButton>
-      <Menu translation={translation} toggleMenu={screen.width ?? 0 >= 1024 ? undefined : toggleMenu} />
+      <Menu translation={translation} toggleMenu={screen.width >= 1024 ? undefined : toggleMenu} />
     </header>
   );
 };
