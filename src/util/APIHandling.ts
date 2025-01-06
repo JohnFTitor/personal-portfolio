@@ -1,13 +1,15 @@
 const baseURL = 'https://johnftitor-portfolio-api.herokuapp.com/';
+import { Project } from '../redux/types';
+import { LoginBody } from './types';
 
-const getProjects = async () => {
+const getProjects = async (): Promise<Project[]> => {
   const response = await fetch(`${baseURL}/projects`);
-  const responseFormated = await response.json();
-  const data = await responseFormated.data;
+  const responseFormatted = await response.json();
+  const data = await responseFormatted.data;
   return data.map((entry) => entry.attributes);
 };
 
-const loginUser = async (data) => {
+const loginUser = async (data: LoginBody) => {
   const response = await fetch(`${baseURL}/login`, {
     method: 'POST',
     mode: 'cors',
@@ -16,15 +18,16 @@ const loginUser = async (data) => {
     },
     body: JSON.stringify(data),
   });
-  const responseFormated = await response.json();
+  
+  const responseFormatted = await response.json();
 
   if (response.status === 200) {
-    localStorage.user = JSON.stringify(responseFormated);
+    localStorage.user = JSON.stringify(responseFormatted);
   }
-  return { status: response.status, data: responseFormated };
+  return { status: response.status, data: responseFormatted };
 };
 
-const deleteProject = async (id, token) => {
+const deleteProject = async (id: number, token: string) => {
   const response = await fetch(`${baseURL}/projects/${id}`, {
     method: 'DELETE',
     mode: 'cors',
@@ -33,11 +36,11 @@ const deleteProject = async (id, token) => {
       Authorization: token,
     },
   });
-  const responseFormated = await response.json();
-  return { status: response.status, data: responseFormated };
+  const responseFormatted = await response.json();
+  return { status: response.status, data: responseFormatted };
 };
 
-const createProject = async (formData, token) => {
+const createProject = async (formData, token): Promise<{ status: number; project: Project }> => {
   const response = await fetch(`${baseURL}/projects`, {
     method: 'POST',
     mode: 'cors',
@@ -46,8 +49,8 @@ const createProject = async (formData, token) => {
     },
     body: formData,
   });
-  const responseFormated = await response.json();
-  return { status: response.status, project: responseFormated };
+  const responseFormatted = await response.json();
+  return { status: response.status, project: responseFormatted };
 };
 
 export {

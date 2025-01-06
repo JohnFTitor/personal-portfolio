@@ -50,7 +50,7 @@ const addProject = createAsyncThunk(
   async (data: AddProjectBody) => {
     const response = await createProject(data.body, data.token);
     if (response.status === 201) {
-      return response.project.data.attributes;
+      return response.project;
     }
     return Promise.reject(new Error(JSON.stringify(response.project)));
   },
