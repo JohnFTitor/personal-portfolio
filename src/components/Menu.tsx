@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 
 interface MenuProps {
   translation: string;
-  toggleMenu(...args: unknown[]): unknown;
+  toggleMenu: (() => void) | undefined;
 }
 
 const Menu = (props: MenuProps) => {
@@ -12,7 +12,7 @@ const Menu = (props: MenuProps) => {
   const app = document.querySelector('.app');
 
   const toggleDarkMode = () => {
-    app.classList.toggle('dark');
+    app?.classList.toggle('dark');
     localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
   };
 

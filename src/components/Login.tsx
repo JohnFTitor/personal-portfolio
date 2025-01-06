@@ -1,9 +1,10 @@
 import { Box, Button, Input } from '@mui/material';
 import React, { useState } from 'react';
 import { loginUser } from '../util/APIHandling';
+import { LoginBody } from '../util/types';
 
 const Login = () => {
-  const [user, setUserData] = useState({
+  const [user, setUserData] = useState<LoginBody>({
     username: '',
     password: '',
   });

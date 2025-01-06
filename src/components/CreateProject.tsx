@@ -5,8 +5,8 @@ import {
   InputLabel,
 } from '@mui/material';
 import React, { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
 import { addProject } from '../redux/projectsReducer';
+import { useAppDispatch } from '../redux/store';
 
 interface CreateProjectProps {
   user: {
@@ -29,6 +29,8 @@ const CreateProject = ({
     live: '',
     source: '',
     demo: '',
+    desktop_image: null,
+    mobile_image: null,
   });
 
   const handleChange = (e) => {
@@ -55,23 +57,26 @@ const CreateProject = ({
     setProjectData(newProjectData);
   };
 
-  const desktopImage = useRef(null);
-  const mobileImage = useRef(null);
-  const dispatch = useDispatch();
+  const desktopImage = useRef<HTMLInputElement>(null);
+  const mobileImage = useRef<HTMLInputElement>(null);
+  const dispatch = useAppDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
     const tags = project.tags.map((instance) => instance.tag);
 
+    const desktopImageElement = desktopImage.current?.firstChild as HTMLInputElement;
+    const mobileImageElement = mobileImage.current?.firstChild as HTMLInputElement;
+
     formData.append('title', project.title);
     formData.append('description', project.description);
-    formData.append('tags', tags);
+    formData.append('tags', JSON.stringify(tags));
     formData.append('live', project.live);
     formData.append('source', project.source);
     formData.append('demo', project.demo);
-    formData.append('desktop_image', desktopImage.current.firstChild.files[0]);
-    formData.append('mobile_image', mobileImage.current.firstChild.files[0]);
+    formData.append('desktop_image', desktopImageElement?.files?.[0] as File);
+    formData.append('mobile_image', mobileImageElement?.files?.[0] as File);
 
     dispatch(addProject({
       body: formData,

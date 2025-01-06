@@ -1,15 +1,16 @@
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 
 interface ProtectedRouteProps {
-  redirectPath: string;
   isAllowed: boolean;
   element: React.ReactElement;
+  redirectPath?: string;
 }
 
 const ProtectedRoute = ({
-  redirectPath = '/admin/login',
   isAllowed,
-  element
+  element,
+  redirectPath = '/admin/login',
 }: ProtectedRouteProps) => {
   if (!isAllowed) {
     return <Navigate to={redirectPath} replace />;

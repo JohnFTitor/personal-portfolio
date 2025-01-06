@@ -8,4 +8,6 @@ export interface Project {
   description: string;
   live: string;
   source: string;
+  mobileImage: string;
+  demo: string;
 }

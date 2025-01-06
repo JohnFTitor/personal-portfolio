@@ -31,15 +31,15 @@ const Project = (props: ProjectProps) => {
   const parent = document.querySelector('#projects');
 
   const scrollDown = () => {
-    parent.scroll({
-      top: parent.scrollTop + size.height,
+    parent?.scroll({
+      top: parent?.scrollTop + (size.height ?? 0),
       behavior: 'smooth',
     });
   };
 
   const scrollUp = () => {
-    parent.scroll({
-      top: parent.scrollTop - size.height,
+    parent?.scroll({
+      top: parent?.scrollTop - (size.height ?? 0),
       behavior: 'smooth',
     });
   };

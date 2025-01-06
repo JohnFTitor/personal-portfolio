@@ -9,9 +9,10 @@ import WebIcon from '@mui/icons-material/Web';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ScrollUpButton from './ScrollUpButton';
+import { RootState } from '../redux/store';
 
 const ProjectDetails = () => {
-  const { data } = useSelector((state) => state.projects);
+  const { data } = useSelector((state: RootState) => state.projects);
   const { id } = useParams();
   const project = data?.filter((project) => project.id.toString() === id)[0];
 

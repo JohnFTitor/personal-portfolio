@@ -1,8 +1,8 @@
 import { createReducer, createAsyncThunk } from '@reduxjs/toolkit';
 import { createProject, deleteProject, getProjects } from '../util/APIHandling';
 import { Status, Project } from './types';
-
-export interface ProjectState {
+import { AddProjectFormData } from '../util/types';
+export interface ProjectsState {
   data: Project[];
   status: Status;
 }
@@ -16,11 +16,11 @@ export interface DeleteProjectBody extends AuthenticatedRequest {
 }
 
 export interface AddProjectBody extends AuthenticatedRequest {
-  body: Pick<Project, 'title' | 'image' | 'description' | 'tags' | 'live' | 'source'>;
+  body: AddProjectFormData;
 }
 
 // Define initial state
-const initialState: ProjectState = {
+const initialState: ProjectsState = {
   data: [],
   status: 'idle',
 };
@@ -59,7 +59,7 @@ const addProject = createAsyncThunk(
 export { fetchProjects, removeProject, addProject };
 
 // Define Reducer
-const projectsReducer = createReducer<ProjectState>(initialState, (builder) => {
+const projectsReducer = createReducer<ProjectsState>(initialState, (builder) => {
   builder
     .addCase(fetchProjects.fulfilled, (state, action) => {
       const newState = { ...state };

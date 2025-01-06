@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Page from './Page';
 import animation from '../assets/gifs/presentation.gif';
 import DeleteProjectsProtected from './DeleteProjectsProtected';
 import { fetchProjects } from '../redux/projectsReducer';
+import { RootState } from '../redux/store';
+import { useAppDispatch } from '../redux/store';
 
 const DeleteProjectsPage = () => {
-  const { status } = useSelector((state) => state.projects);
-  const dispatch = useDispatch();
+  const { status } = useSelector((state: RootState) => state.projects);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (status === 'iddle') {
+    if (status === 'idle') {
       dispatch(fetchProjects());
     }
   }, []);

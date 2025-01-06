@@ -2,9 +2,9 @@ import { Box } from '@mui/material';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Project from './Project';
-
+import { RootState } from '../redux/store';
 const Projects = () => {
-  const { data } = useSelector((state) => state.projects);
+  const { data } = useSelector((state: RootState) => state.projects);
 
   return (
     <Box className="w-full h-full overflow-hidden">

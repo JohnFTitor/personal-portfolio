@@ -3,10 +3,17 @@ import { IconButton, Box } from '@mui/material';
 import Menu from './Menu';
 import useWindowSize from '../util/useWindowSize';
 
+interface Classes {
+  color: string;
+  opacity: string;
+  rotateUp: string | null;
+  rotateDown: string | null;
+}
+
 const Header = () => {
   const [menuActive, setMenu] = useState(false);
   const [translation, setTranslation] = useState('-translate-x-full');
-  const [classes, setClasses] = useState({
+  const [classes, setClasses] = useState<Classes>({
     color: 'bg-primary-1000 dark:bg-primary-50',
     opacity: 'opacity-100 dark:bg-primary-50',
     rotateUp: null,
@@ -38,7 +45,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (screen.width >= 1024) {
+    if (screen.width ?? 0 >= 1024) {
       showMenu();
     } else {
       hideMenu();
@@ -60,7 +67,7 @@ const Header = () => {
         <Box className={`bg-primary-1000 h-1 w-8 transition-all ${classes.opacity}`} />
         <Box className={`${classes.color} h-1 w-8 origin-bottom-left transition-all ${classes.rotateUp}`} />
       </IconButton>
-      <Menu translation={translation} toggleMenu={screen.width >= 1024 ? null : toggleMenu} />
+      <Menu translation={translation} toggleMenu={screen.width ?? 0 >= 1024 ? undefined : toggleMenu} />
     </header>
   );
 };

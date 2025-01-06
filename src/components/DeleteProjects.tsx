@@ -1,7 +1,9 @@
 import { Button } from '@mui/material';
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { removeProject } from '../redux/projectsReducer';
+import { RootState } from '../redux/store';
+import { useAppDispatch } from '../redux/store';
 
 interface DeleteProjectsProps {
   user: {
@@ -13,9 +15,9 @@ interface DeleteProjectsProps {
 const DeleteProjects = ({
   user
 }: DeleteProjectsProps) => {
-  const { data } = useSelector((state) => state.projects);
+  const { data } = useSelector((state: RootState) => state.projects);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const destroyProject = async (id) => {
     dispatch(removeProject({

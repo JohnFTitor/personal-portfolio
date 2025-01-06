@@ -8,9 +8,10 @@ import Skill from './Skill';
 import animation from '../assets/gifs/learning.gif';
 import Ability from './Ability';
 import ScrollUpButton from './ScrollUpButton';
+import { RootState } from '../redux/store';
 
 const About = () => {
-  const { data } = useSelector((state) => state.about);
+  const { data } = useSelector((state: RootState) => state.about);
 
   const {
     profile,

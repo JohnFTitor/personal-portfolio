@@ -1,16 +1,18 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import animation from '../assets/gifs/presentation.gif';
 import { fetchProjects } from '../redux/projectsReducer';
 import Page from './Page';
 import ProjectDetails from './ProjectDetails';
+import { RootState } from '../redux/store';
+import { useAppDispatch } from '../redux/store';
 
 const DetailsPage = () => {
-  const { status } = useSelector((state) => state.projects);
-  const dispatch = useDispatch();
+  const { status } = useSelector((state: RootState) => state.projects);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (status === 'iddle') {
+    if (status === 'idle') {
       dispatch(fetchProjects());
     }
   }, []);
