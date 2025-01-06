@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
 
@@ -14,6 +13,12 @@ const Menu = (props: MenuProps) => {
   const toggleDarkMode = () => {
     app?.classList.toggle('dark');
     localStorage.theme = localStorage.theme === 'dark' ? 'light' : 'dark';
+  };
+
+  const handleClick = () => {
+    console.log(toggleMenu);
+
+    toggleMenu?.();
   };
 
   return (

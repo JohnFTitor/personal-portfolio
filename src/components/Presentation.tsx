@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import { AiFillMediumCircle } from 'react-icons/ai';
 import { SiAngellist } from 'react-icons/si';

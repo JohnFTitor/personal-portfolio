@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CircleIcon from '@mui/icons-material/Circle';
 import { Box } from '@mui/material';
 

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const rotation = [
   'rotate-6',
   '-rotate-6',

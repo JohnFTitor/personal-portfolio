@@ -3,7 +3,7 @@ import {
   Button,
   Input,
 } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from '@formspree/react';
 import SendIcon from '@mui/icons-material/Send';
 import CloseIcon from '@mui/icons-material/Close';
@@ -56,9 +56,9 @@ const Contact = () => {
     transform,
   } = classes;
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newFormInfo = { ...formInfo };
-    newFormInfo[e.target.name] = e.target.value;
+    newFormInfo[e.target.name as keyof typeof formInfo] = e.target.value;
     setFormInfo(newFormInfo);
     setNotification(false);
   };

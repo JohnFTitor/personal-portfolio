@@ -1,5 +1,5 @@
 import { Box, Button, Input } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { loginUser } from '../util/APIHandling';
 import { LoginBody } from '../util/types';
 
@@ -13,7 +13,7 @@ const Login = () => {
     message: '',
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await loginUser(user);
     if (response.status === 401) {
@@ -29,9 +29,9 @@ const Login = () => {
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newUserData = { ...user };
-    newUserData[e.target.name] = e.target.value;
+    newUserData[e.target.name as keyof typeof user] = e.target.value;
     setUserData(newUserData);
     setNotification({
       open: false,

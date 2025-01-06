@@ -1,4 +1,3 @@
-import React from 'react';
 import ProtectedRoute from './ProtectedRoute';
 import CreateProject from './CreateProject';
 import animation from '../assets/gifs/presentation.gif';

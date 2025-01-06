@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Box, IconButton } from '@mui/material';
 import WebIcon from '@mui/icons-material/Web';
@@ -6,10 +5,10 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { v4 as uuidv4 } from 'uuid';
 import useWindowSize from '../util/useWindowSize';
-import { Project } from '../redux/types';
+import { Project as ProjectType } from '../redux/types';
 
 interface ProjectProps {
-  project: Project;
+  project: ProjectType;
   first: boolean;
   last: boolean;
 }

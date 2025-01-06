@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import useWindowSize from '../util/useWindowSize';
 
 interface AbilityProps {
@@ -13,14 +13,14 @@ const Ability = (props: AbilityProps) => {
   useEffect(() => {
     const elements = document.querySelectorAll('.ability');
 
-    elements.forEach((element) => {
-      const learningContainer = element.parentNode;
+    elements.forEach((element: any) => {
+      const learningContainer = element.parentNode as any;
       const totalWidth = learningContainer.offsetWidth - element.offsetWidth;
 
       let position = Math.floor(Math.random() * (learningContainer.offsetWidth - 100));
       let pace = 1;
 
-      const move = () => {
+    const move = () => {
         window.requestAnimationFrame(move);
         position += pace;
 

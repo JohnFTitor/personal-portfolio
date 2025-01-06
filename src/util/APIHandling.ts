@@ -2,11 +2,15 @@ const baseURL = 'https://johnftitor-portfolio-api.herokuapp.com/';
 import { Project } from '../redux/types';
 import { AddProjectFormData, LoginBody } from './types';
 
+interface ProjectEntry {
+  attributes: Project;
+}
+
 const getProjects = async (): Promise<Project[]> => {
   const response = await fetch(`${baseURL}/projects`);
   const responseFormatted = await response.json();
   const data = await responseFormatted.data;
-  return data.map((entry) => entry.attributes);
+  return data.map((entry: ProjectEntry) => entry.attributes);
 };
 
 const loginUser = async (data: LoginBody) => {
@@ -40,7 +44,7 @@ const deleteProject = async (id: number, token: string) => {
   return { status: response.status, data: responseFormatted };
 };
 
-const createProject = async (formData: AddProjectFormData, token): Promise<{ status: number; project: Project }> => {
+const createProject = async (formData: AddProjectFormData, token: string): Promise<{ status: number; project: Project }> => {
   const response = await fetch(`${baseURL}/projects`, {
     method: 'POST',
     mode: 'cors',

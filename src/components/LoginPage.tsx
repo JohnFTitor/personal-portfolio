@@ -1,4 +1,3 @@
-import React from 'react';
 import Page from './Page';
 import Login from './Login';
 import presentation from '../assets/gifs/presentation.gif';

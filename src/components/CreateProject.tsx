@@ -4,7 +4,7 @@ import {
   Input,
   InputLabel,
 } from '@mui/material';
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { addProject } from '../redux/projectsReducer';
 import { useAppDispatch } from '../redux/store';
 
@@ -33,10 +33,11 @@ const CreateProject = ({
     mobile_image: null,
   });
 
-  const handleChange = (e) => {
-    const newProjectData = { ...project };
-    newProjectData[e.target.name] = e.target.value;
-    setProjectData(newProjectData);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setProjectData({
+      ...project,
+      [e.target.name]: e.target.value
+    });
   };
 
   const addTag = () => {
@@ -45,15 +46,15 @@ const CreateProject = ({
     setProjectData(newProjectData);
   };
 
-  const removeTag = (index) => {
+  const removeTag = (index: number) => {
     const newProjectData = { ...project };
     newProjectData.tags.splice(index, 1);
     setProjectData(newProjectData);
   };
 
-  const handleTagChange = (e, index) => {
+  const handleTagChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, index: number) => {
     const newProjectData = { ...project };
-    newProjectData.tags[index][e.target.name] = e.target.value;
+    newProjectData.tags[index][e.target.name as keyof typeof newProjectData.tags[number]] = e.target.value;
     setProjectData(newProjectData);
   };
 
@@ -61,7 +62,7 @@ const CreateProject = ({
   const mobileImage = useRef<HTMLInputElement>(null);
   const dispatch = useAppDispatch();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData();
     const tags = project.tags.map((instance) => instance.tag);
