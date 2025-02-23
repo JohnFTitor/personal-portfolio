@@ -1,0 +1,57 @@
+import { Box, Button, Input } from '@mui/material';
+import { useState } from 'react';
+import { loginUser } from '../util/APIHandling';
+import { LoginBody } from '../util/types';
+
+const Login = () => {
+  const [user, setUserData] = useState<LoginBody>({
+    username: '',
+    password: '',
+  });
+  const [notification, setNotification] = useState({
+    open: false,
+    message: '',
+  });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const response = await loginUser(user);
+    if (response.status === 401) {
+      setNotification({
+        open: true,
+        message: response.data.error,
+      });
+    } else if (response.status === 200) {
+      setNotification({
+        open: true,
+        message: 'Welcome, Master',
+      });
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newUserData = { ...user };
+    newUserData[e.target.name as keyof typeof user] = e.target.value;
+    setUserData(newUserData);
+    setNotification({
+      open: false,
+      message: '',
+    });
+  };
+
+  return (
+    <Box component="form" onSubmit={handleSubmit} className="h-content-screen flex flex-col justify-center items-center gap-10">
+      <h1 className="text-primary-900 dark:text-primary-50 text-3xl"> Login </h1>
+      {notification.open && (
+      <span className="p-5 text-red-900 dark:text-red-100 text-xl">
+        { notification.message }
+      </span>
+      )}
+      <Input className="text-xl text-primary-900 dark:text-primary-50" type="text" value={user.username} onChange={handleChange} name="username" placeholder="Username" required />
+      <Input className="text-xl text-primary-900 dark:text-primary-50" type="password" value={user.password} onChange={handleChange} name="password" placeholder="Password" required />
+      <Button type="submit" variant="contained" className="text-primary-900 dark:text-primary-50"> Login </Button>
+    </Box>
+  );
+};
+
+export default Login;
